@@ -421,7 +421,8 @@ header {
   top: 0;
   width: 100%;
   height: 113px;
-  background-color: rgba($color: #000000, $alpha: .7);  
+  background-color: rgba($color: #ffffff, $alpha: .4);  
+  border-radius: 5px;
   z-index: 100;
 
   .header_area {
@@ -478,7 +479,11 @@ header {
 
       a {
         font-size: 14px;
-        color: #eee;
+        color: #555;
+        &:hover {
+          color: #000;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -496,7 +501,11 @@ header {
         display: block;
         padding: 26px 40px;
         font-size: 18px;
-        color: #fff;
+        color: #333;
+        &:hover {
+          color: #000;
+          text-decoration: underline;
+        }
       }
 
       &:last-child a {
@@ -887,6 +896,7 @@ footer {
   .mainI {
     position: relative;
     max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
     height: 370px;
     border-bottom: 1px solid #555;
@@ -907,7 +917,7 @@ footer {
     }
 
     .subM {
-      width: 100%;
+      max-width: 95%;
       height: 300px;
 
       .subI {
@@ -943,24 +953,29 @@ footer {
       width: 30px;
       height: 30px;
       line-height: 30px;
-      border: 1px solid #000;
-      border-radius: 5px;
+      border: 1px solid rgba($color: #000000, $alpha: .6);
+      border-radius: 15px;
       text-align: center;
-      background-color: #fff;
+      background-color: rgba($color: #ffffff, $alpha: .6);
+      background-repeat: no-repeat;
+      background-position: center;
+      
 
       &:hover {
         border: 1px solid rgba(250, 100, 0, 1);
-        color: rgba(250, 100, 0, 1);
+        background-color: rgba($color: #ffffff, $alpha: 1);
       }
     }
 
     .prev {
       left: 1%;
       display: none;
+      background-image: url(../images/btn_firstpage.png);
     }
 
     .next {
       right: 1%;
+      background-image: url(../images/btn_lastpage.png);
     }
   }
 }
@@ -2142,6 +2157,11 @@ h1.loginTit {
   .bodytext_area.Top_music {
     margin-top: 100px;
   }
+  /* Music Library */
+  .bodytext_area.musicLib {
+    margin-top: 100px;
+  }
+
   /* about_area */
   .about_area {
     h2 {
