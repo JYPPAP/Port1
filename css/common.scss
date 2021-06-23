@@ -347,12 +347,6 @@ caption {
   overflow: hidden;
 }
 
-.clear::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 hr {
   display: none;
 }
