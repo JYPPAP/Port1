@@ -33,6 +33,19 @@ $(document).ready(function () {
   });
 });
 
+/* about_area 의 박스요소를 클릭했을 때 modal 창 출력될 수 있게 만들기.
+  > 현재 html 파일에 들어있는 내용을 스크립트 파일로 옮기기.
+ */
+$(document).ready(function () {
+  $('.about_area .place_list li >a').click(function(e){
+    // e.preventDefault();
+    console.log('click');
+    $('.popup_base').css('height', $(document).height());
+    $('.contact_pop').show();
+  });
+});
+
+
 $(document).ready(function () {
   // PC 브라우저에서 좁혀서 메뉴 닫고 다시 넓힐 때 상단 메뉴 노출되게 설정.
   $(window).resize(function () {
@@ -101,6 +114,12 @@ $(function() {
       }
     }
     /* 리사이즈 했을 때 버튼 초기화*/
+    /*
+    현재 화면에 있는 사진들이 화면이 확대되어 보여지는 개수가 4.5
+    정도에서 4개까지 줄어들었을 때 내가 원하는 값이 나오지 않고있다.
+    그걸 해결하기 위해서 resize이벤트 안에 새로 값을 구해서 반환하도록 작성했는데, 정상적으로 동작하지 않고 있다.
+    오류가 나지 않는걸 보면 정상적으로 반환되는것도 같은데....
+    */
     next.show();
     prev.hide();
     cnt = 0;
