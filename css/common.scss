@@ -13,6 +13,16 @@ CSS부터 깔끔하게 짜 놓고, 그 다음 스크립트를 이용해야 한�
 /* 탭키로 넘기다 보면 가장 처음으로 포커스 되는 부분. 
 기존에는 위쪽에 숨어있다가 포커스나 활성화가 되면 아래로 내려온다. t-50 > t50
 */
+
+/* 다크모드 CSS에서 감지 방법.*/
+// @media (prefers-color-scheme: dark) {
+//   /* 사용자가 다크모드를 운영체제에서 설정했을 때. */
+//   .themed {
+//     background-color: #000;
+//     color: #fff;
+//   }
+// }
+
 .clear:after {
   content: '';
   display: block;
@@ -1365,6 +1375,8 @@ footer {
       margin: 5px;
       border: 1px solid #ddd;
       border-radius: 10px;
+      margin-bottom: 25px;
+      overflow: hidden;
 
       
       >a {
@@ -2099,6 +2111,12 @@ h1.loginTit {
     .foot_area {
       box-sizing: border-box;
       padding: 0 20px 90px;
+      text-align: center;
+      .foot_list {
+        li {
+          
+        }
+      }
 
       h2 {
         padding-top: 15px;
@@ -2112,7 +2130,7 @@ h1.loginTit {
       }
 
       .copy {
-        padding: 3px 0 20px;
+        padding: 13px 0 20px;
         font-size: 14px;
         color: $c1;
       }

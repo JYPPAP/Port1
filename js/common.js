@@ -85,47 +85,36 @@ $(function() {
 
   var vc = Math.ceil(frame / w);
   var cont = (sc / (vc * mc));
-  console.log(vc);
-  console.log(cont);
+  console.log(frame);     // 1000
+  console.log(vc);        // 5
+  console.log(cont);      // 1
   /* #문제 0
   test의 결과값은 소숫점(2.2)으로 출력된다. 그러면 정수값과 나머지를 이용해서 끝부분이 오른쪽 끝에 올 수 있도록 만들 수 있을 것 같다. 
   너비가 1000이니 next 버튼을 눌렀을 때 .2 * 100px 을 이동시키면 될
   */
-  
-  /* 슬라이드 배치 
-  #문제1
-  즉시실행도 써보고, 함수명을 준 다음 실행하는 방법도 써보고 onload도 써봤는데 이게 제일 정상이다.
-  즉시실행쓰면 화면 확대후 넘긴 다음. 다시 축소했을 때 너비가 깨진다. > 리사이즈가 안되고 1회 실행만 되고 끝남.
-  일단 코드 반복사용을 하고, 그 다음. 나중에 문제해결을 해야할 것 같다. 일단 만들고 보자.
-  현 상황은 최초실행될 부분과, 화면 크기변경시 너비를 자동으로 변경해 줄 수 있도록 만들었다.
-  */
-  for (var i in mItem) {
-    for (var j in sItem) {
-      mItem.eq(i).find(sItem).eq(j).css({ left: j * w });
-    }
-  }
-  /* 리사이즈 했을 때 리스트 넘김 초기화 */
-  $(window).resize(function() {
+  function itemSort() {
     for (var i in mItem) {
       for (var j in sItem) {
-        mItem.eq(i).find(sItem).eq(j).css({
-          left: j * w
-        });
+        mItem.eq(i).find(sItem).eq(j).css({ left: j * w });
       }
     }
-    /* 리사이즈 했을 때 버튼 초기화*/
-    /*
-    현재 화면에 있는 사진들이 화면이 확대되어 보여지는 개수가 4.5
-    정도에서 4개까지 줄어들었을 때 내가 원하는 값이 나오지 않고있다.
-    그걸 해결하기 위해서 resize이벤트 안에 새로 값을 구해서 반환하도록 작성했는데, 정상적으로 동작하지 않고 있다.
-    오류가 나지 않는걸 보면 정상적으로 반환되는것도 같은데....
-    */
+  }
+  itemSort();
+  
+  /* 리사이즈 했을 때 리스트 넘김 초기화 */
+  $(window).resize(function() {
+    itemSort();
+    /* 리사이즈 했을 때 버튼 및 카운트 초기화*/
     next.show();
     prev.hide();
     cnt = 0;
+
     frame = mItem.width();
     vc = Math.ceil(frame / w);
     cont = (sc / (vc * mc));
+    console.log(frame);     //  747
+    console.log(vc);        //  4
+    console.log(cont);      //  1.25
     return frame, vc, cont;
   });
     
@@ -167,3 +156,43 @@ $(function() {
     $(this).parents('.pop_content').find('.player')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
   });
 });
+
+/* dark mode */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* 로컬 스토리지에서 theme 받아오기 */
+  let theme = localStorage.getItem('theme');
+  /* 값이 없으면 theme, light로 key, value 지정 */
+  if(!theme) {
+    // localStorage.setItem('theme', 'light');
+    const { matches} = window.matchMedia('(prefers-color-scheme: dark)');
+    // console.log(matches);
+    theme = matches ? 'dark' : 'light';
+
+    localStorage.setItem('theme', theme);
+  }
+  /* theme의 값이 dark 면 dark 클래스를 추가하고, 아니면 추가하지 않는 코드. */
+  document.body.classList.toggle('dark', theme === 'dark');
+  
+  /* 깜빡거림 제거 */
+  setTimeout(() => {
+    document.body.style.visibility = 'visible';
+  }, 300);
+  
+});
+
+document.querySelector('.toggle-button').onclick = e => {
+  const theme = localStorage.getItem('theme');
+
+  localStorage.setItem('theme', `${theme === 'dark' ? 'light' : 'dark'}`);
+
+  document.body.classList.toggle('dark');
+};
+/* js에서 다크모드 감지. */
+// const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+// console.log(darkModeMediaQuery);
+
+// darkModeMediaQuery.addEventListener(e => {
+//   const darkModeOn = e.matches;
+//   console.log(`Dark mode is ${darkModeOn ? 'on' : 'off'}.`);
+// });

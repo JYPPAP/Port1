@@ -68,3 +68,56 @@
 6층 상담실 상담실장님과.
 주로 아침, 저녁 이렇게 있다.
 아침에 하고싶은 사람은 미리 얘기를 해 놔라.
+
+
+쿠키를 사용하는 방법에 대해서 알아보기.
+
+jquery
+jquery-migrate
+
+플러그인.js
+플러그인.css
+
+common.css 로
+덮어쓰는 형태로 만들어야 한다.
+
+custom.js
+custom.css 등등
+내가 만든 것이 아래에 올 수 있도록 작성해야 한다.
+
+스크롤바 플러그인.
+nice scroll 플러그인.
+
+
+#########################
+		slideItem
+#########################
+  console.log(frame);     // 1000
+  console.log(vc);        // 5
+  console.log(cont);      // 1
+  
+  화면을 줄이면.
+  console.log(frame);     //  747
+  console.log(vc);        //  4
+  console.log(cont);      //  1.25
+  
+frame : 아이템이 출력되는 화면(mItem)의 너비
+vc : frame / w(sItem의 너비)
+cont : (sc[sItem.length;] / (vc * mc[mItem.length;]));
+
+근데 왜 mc를 썼지?
+mItem의 개수가 무슨 상관이 있다고...
+#
+슬라이드를 넘기면서 원하는 아이템이 끝에 도달하도록 만들기 위해서 값을 만드는 데 필요한 요소들은
+1. 출력되는 화면의 너비
+2. 나오는 아이템의 크기
+3. 아이템의 전체 개수
+
+
+# dark mode
+css에서 body를 visibility: hidden으로 한 다음.
+js에서 스타일 지정.
+
+버튼 안에 transition이 지정되어 있다면
+깜빡거림이 나타나게 된다.
+
