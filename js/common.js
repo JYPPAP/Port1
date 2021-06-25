@@ -68,7 +68,6 @@ $(document).ready(function () {
       $(this).text("더보기");
     }
   });
-
 });
 
 /* main 페이지 버튼 */
@@ -83,15 +82,13 @@ $(function() {
   var w = sItem.width();
   var cnt = 0;
 
+  // var vc = Math.floor(frame / w);
   var vc = Math.ceil(frame / w);
-  var cont = (sc / (vc * mc));
-  console.log(frame);     // 1000
-  console.log(vc);        // 5
-  console.log(cont);      // 1
-  /* #문제 0
-  test의 결과값은 소숫점(2.2)으로 출력된다. 그러면 정수값과 나머지를 이용해서 끝부분이 오른쪽 끝에 올 수 있도록 만들 수 있을 것 같다. 
-  너비가 1000이니 next 버튼을 눌렀을 때 .2 * 100px 을 이동시키면 될
-  */
+  var cont = Math.round(sc / (vc * mc));
+  
+  console.log("mainI의 너비 :" + frame);     // 1000
+  console.log("너비당 화면에 들어가는 아이템의 개수 :" + vc);
+  console.log("다음 버튼을 누를 수 있는 횟수 :" + cont);
   function itemSort() {
     for (var i in mItem) {
       for (var j in sItem) {
@@ -111,10 +108,11 @@ $(function() {
 
     frame = mItem.width();
     vc = Math.ceil(frame / w);
-    cont = (sc / (vc * mc));
-    console.log(frame);     //  747
-    console.log(vc);        //  4
-    console.log(cont);      //  1.25
+    cont = Math.round(sc / (vc * mc));
+
+    console.log("리사이즈 했을 때 mainI의 너비 :" + frame);     // 1000
+    console.log("리사이즈 했을 때 너비당 화면에 들어가는 아이템의 개수 :" + vc);
+    console.log("리사이즈 했을 때 다음 버튼을 누를 수 있는 횟수 :" + cont);
     return frame, vc, cont;
   });
     
@@ -132,7 +130,7 @@ $(function() {
   next.click(function(){
     cnt++;
     $(this).parent().find(sItem).stop().animate({left: '-=100%'}, 'fast');
-    if(cnt >= parseInt(cont)){
+    if(cnt === cont){
       $(this).hide();
     }
     $(this).siblings(prev).show();
@@ -156,43 +154,3 @@ $(function() {
     $(this).parents('.pop_content').find('.player')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
   });
 });
-
-/* dark mode */
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* 로컬 스토리지에서 theme 받아오기 */
-  let theme = localStorage.getItem('theme');
-  /* 값이 없으면 theme, light로 key, value 지정 */
-  if(!theme) {
-    // localStorage.setItem('theme', 'light');
-    const { matches} = window.matchMedia('(prefers-color-scheme: dark)');
-    // console.log(matches);
-    theme = matches ? 'dark' : 'light';
-
-    localStorage.setItem('theme', theme);
-  }
-  /* theme의 값이 dark 면 dark 클래스를 추가하고, 아니면 추가하지 않는 코드. */
-  document.body.classList.toggle('dark', theme === 'dark');
-  
-  /* 깜빡거림 제거 */
-  setTimeout(() => {
-    document.body.style.visibility = 'visible';
-  }, 300);
-  
-});
-
-document.querySelector('.toggle-button').onclick = e => {
-  const theme = localStorage.getItem('theme');
-
-  localStorage.setItem('theme', `${theme === 'dark' ? 'light' : 'dark'}`);
-
-  document.body.classList.toggle('dark');
-};
-/* js에서 다크모드 감지. */
-// const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-// console.log(darkModeMediaQuery);
-
-// darkModeMediaQuery.addEventListener(e => {
-//   const darkModeOn = e.matches;
-//   console.log(`Dark mode is ${darkModeOn ? 'on' : 'off'}.`);
-// });

@@ -1,20 +1,21 @@
-@charset "utf-8";
-@import url("layout_base.css");
-@import url("reset.css");
+@charset 'utf-8';
+@import url('layout_base.css');
+@import url('reset.css');
 
-/* 초기화 > reset.css 를 참고하기. */
-/* CSS를 최대한 이용하면 좋은 이유는
-혹시 자바스크립트에 문제가 발생하여 실행이 힘든 상황에서
-CSS로 충분한 기초를 짜 놓으면 기본적으로 깔끔한 디자인이 나오기 때문에
-CSS부터 깔끔하게 짜 놓고, 그 다음 스크립트를 이용해야 한다.
- */
+// 초기화 > reset.css 를 참고하기.
+// CSS를 최대한 이용하면 좋은 이유는
+// 혹시 자바스크립트에 문제가 발생하여 실행이 힘든 상황에서
+// CSS로 충분한 기초를 짜 놓으면 기본적으로 깔끔한 디자인이 나오기 때문에
+// CSS부터 깔끔하게 짜 놓고, 그 다음 스크립트를 이용해야 한다.
 
-/* 건너뛰기 링크(접근성) */
-/* 탭키로 넘기다 보면 가장 처음으로 포커스 되는 부분. 
-기존에는 위쪽에 숨어있다가 포커스나 활성화가 되면 아래로 내려온다. t-50 > t50
-*/
 
-/* 다크모드 CSS에서 감지 방법.*/
+// 건너뛰기 링크(접근성)
+
+// 탭키로 넘기다 보면 가장 처음으로 포커스 되는 부분. 
+// 기존에는 위쪽에 숨어있다가 포커스나 활성화가 되면 아래로 내려온다. t-50 > t50
+
+
+// 다크모드 CSS에서 감지 방법.
 // @media (prefers-color-scheme: dark) {
 //   /* 사용자가 다크모드를 운영체제에서 설정했을 때. */
 //   .themed {
@@ -23,7 +24,7 @@ CSS부터 깔끔하게 짜 놓고, 그 다음 스크립트를 이용해야 한�
 //   }
 // }
 
-.clear:after {
+.clear::after {
   content: '';
   display: block;
   clear: both;
@@ -425,7 +426,7 @@ header {
   top: 0;
   width: 100%;
   height: 113px;
-  background-color: rgba($color: #ffffff, $alpha: .4);  
+  background-color: rgba($color: #ffffff, $alpha: .4);
   border-radius: 5px;
   z-index: 100;
 
@@ -937,6 +938,7 @@ footer {
           margin-top: 30px;
           border: 1px solid #ddd;
           box-shadow: 2px 2px 5px #000;
+          /* subI hover 추가 */
         }
 
         .mName {
@@ -1909,10 +1911,10 @@ h1.loginTit {
     height: 90px;
     text-align: center;
     z-index: 200;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba($color: #ffffff, $alpha: .4);
 
     &.on {
-      background: #31353d;
+      background-color: rgba($color: #ffffff, $alpha: .4);
     }
 
     .header_area {
@@ -1949,7 +1951,7 @@ h1.loginTit {
           height: 3px;
           margin-bottom: 4px;
           border-right: 10px;
-          background: #fff;
+          background: #555;
 
           +span {
             width: 17px;
@@ -1965,13 +1967,13 @@ h1.loginTit {
   }
 
   .header_cont {
-    $bg: #31353d;
-    $c: #a2a2a2;
+    $bg: #ddd;
+    $c: #000000;
     float: none;
     width: 100%;
     top: -45px;
     position: relative;
-    background: $bg;
+    background-color: rgba($color: #ffffff, $alpha: 1);
     display: none;
 
     .util {
@@ -1997,7 +1999,7 @@ h1.loginTit {
 
         a {
           font-size: 16px;
-          color: #fff;
+          color: #555;
         }
       }
     }
@@ -2010,12 +2012,18 @@ h1.loginTit {
 
       a {
         display: block;
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         text-indent: -9999px;
         overflow: hidden;
         background: url(../images/btn_closeMenu.png) no-repeat;
+        background-color: rgba($color: #a2a2a2, $alpha: .3);
+        background-position: center;
+        border-radius: 10px;
         background-size: 60px;
+        &:hover {
+          background-color: rgba($color: #a2a2a2, $alpha: .7);
+        }
       }
     }
 
@@ -2047,7 +2055,7 @@ h1.loginTit {
           background: url(../images/ico/top.png) no-repeat 10px center;
           background-size: 49px 56px;
           font-size: 16px;
-          color: #fff;
+          color: #333;
         }
 
         +li a {
@@ -2112,11 +2120,6 @@ h1.loginTit {
       box-sizing: border-box;
       padding: 0 20px 90px;
       text-align: center;
-      .foot_list {
-        li {
-          
-        }
-      }
 
       h2 {
         padding-top: 15px;
