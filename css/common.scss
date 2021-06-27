@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import url('layout_base.css');
 @import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 // 초기화 > reset.css 를 참고하기.
 // CSS를 최대한 이용하면 좋은 이유는
@@ -363,6 +364,11 @@ hr {
 }
 
 /* ========================== PC ========================== */
+/* dark mode */
+body.dark {
+
+}
+
 
 /* button_style */
 .btn_line {
@@ -429,6 +435,33 @@ header {
   background-color: rgba($color: #ffffff, $alpha: .4);
   border-radius: 5px;
   z-index: 100;
+  
+  /* dark 모드 용 토글 버튼 */
+  // .toggle-button {
+  //   position: relative;
+  //   left: 900px;
+  //   top: 10px;
+  //   .button-frame {
+  //     border: 1px solid #000;
+  //     width: 60px;
+  //     height: 20px;
+  //     border-radius: 15px;
+  //     .button {
+  //       border-radius: 15px;
+
+  //     }
+  //     .light-button {
+  //       float: left;
+  //       background-color: #f4d75e;
+  //       border: 1px solid #fff;
+  //     }
+  //     .dark-button {
+  //       float: left;
+  //       margin-left: 22px;
+  //       line-height: 17px;
+  //     }
+  //   }
+  // }
 
   .header_area {
 
@@ -441,7 +474,7 @@ header {
         display: block;
         width: 300px;
         height: 100px;
-        background: url('../images/logo/logo31.png');
+        background: url('../images/logo/lightLogo.png');
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -938,7 +971,6 @@ footer {
           margin-top: 30px;
           border: 1px solid #ddd;
           box-shadow: 2px 2px 5px #000;
-          /* subI hover 추가 */
         }
 
         .mName {
@@ -1134,14 +1166,9 @@ footer {
   height: 445px;
   background: url(../images/mainbg/mainbg1.jpg) no-repeat center;
   background-size: cover;
-
   &.musicLib {
     background-image: url(../images/mainbg/mainbg2.jpg);
   }
-
-  // &.topMusic {
-  //   background-image: url(../images/mainbg/subbg.jpg);
-  // }
 
   // /* Images.img_top4.jpg 가 없는뎁쇼? */
   // &.ticket {
@@ -1157,8 +1184,9 @@ footer {
     margin: 0 50px;
     border-bottom: 1px solid #555;
     font: 30px "Arial Narrow";
-    color: #000;
+    color: #745582;
     letter-spacing: 3px;
+    font-family: 'Josefin Sans', sans-serif;
 
     .in {
       font-variant: small-caps;

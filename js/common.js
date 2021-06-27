@@ -33,19 +33,6 @@ $(document).ready(function () {
   });
 });
 
-/* about_area 의 박스요소를 클릭했을 때 modal 창 출력될 수 있게 만들기.
-  > 현재 html 파일에 들어있는 내용을 스크립트 파일로 옮기기.
- */
-$(document).ready(function () {
-  $('.about_area .place_list li >a').click(function(e){
-    // e.preventDefault();
-    console.log('click');
-    $('.popup_base').css('height', $(document).height());
-    $('.contact_pop').show();
-  });
-});
-
-
 $(document).ready(function () {
   // PC 브라우저에서 좁혀서 메뉴 닫고 다시 넓힐 때 상단 메뉴 노출되게 설정.
   $(window).resize(function () {
@@ -85,10 +72,7 @@ $(function() {
   // var vc = Math.floor(frame / w);
   var vc = Math.ceil(frame / w);
   var cont = Math.round(sc / (vc * mc));
-  
-  console.log("mainI의 너비 :" + frame);     // 1000
-  console.log("너비당 화면에 들어가는 아이템의 개수 :" + vc);
-  console.log("다음 버튼을 누를 수 있는 횟수 :" + cont);
+
   function itemSort() {
     for (var i in mItem) {
       for (var j in sItem) {
@@ -109,10 +93,7 @@ $(function() {
     frame = mItem.width();
     vc = Math.ceil(frame / w);
     cont = Math.round(sc / (vc * mc));
-
-    console.log("리사이즈 했을 때 mainI의 너비 :" + frame);     // 1000
-    console.log("리사이즈 했을 때 너비당 화면에 들어가는 아이템의 개수 :" + vc);
-    console.log("리사이즈 했을 때 다음 버튼을 누를 수 있는 횟수 :" + cont);
+    
     return frame, vc, cont;
   });
     
