@@ -366,7 +366,136 @@ hr {
 /* ========================== PC ========================== */
 /* dark mode */
 body.dark {
+  background-color: #232323;
 
+  /* toggle-button 설정 */
+  .toggle-button {
+    >.toggle-button-switch {
+      left: 26px;
+    }
+    >.toggle-button-text {
+      background-color: #fc3164;
+    }
+  }
+  /* 헤더 */
+  header {
+    background-color: rgba($color: #000000, $alpha: .4);
+    .header_area {
+      h1 a {
+        background: url('../images/logo/darkLogo.png');
+      }
+    }
+  }
+  .util {
+    li {
+      a {
+        color: #ccc;
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+  .gnb {
+    li {
+      a {
+        color: #ddd;
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+  #container {
+    .about_area {
+      h2 {
+        color: #ddd;
+      }
+    }
+    .about_box {
+      background-color: #333;
+    }
+    .place_list {
+      li {
+        h3 {
+          color: #eee;
+        }
+        p.txt {
+          color: #ddd;
+        }
+        .view {
+          color: #aaa;
+        }
+      }
+    }
+  }
+
+  .mainM {
+    .mainI {
+      border-bottom: 1px solid #888;
+      >h2 {
+        color: #ccc;
+      }
+      >p {
+        color: #999;
+      }
+      .subM {
+        .subI {
+          >a {
+            border: 1px solid #555;
+            box-shadow: 2px 2px 5px #888;
+          }
+          .mName {
+            color: #ccc;
+          }
+          .mTag {
+            color: #aaa;
+          }
+        }
+      }
+      .btn {
+        border: 1px solid rgba($color: #ffffff, $alpha: .6);
+        background-color: rgba($color: #000000, $alpha: .8);
+        &:hover {
+          background-color: rgba($color: #000000, $alpha: 1);
+        }
+      }
+    }
+  }
+
+  /* footer */
+  footer {
+    .foot_area {
+      .foot_list {
+        li {
+          &:first-child::after {
+            color: #ddd;
+          }
+          a {
+            color: #ddd;
+          }
+        }
+      }
+      h2 {
+        color: #eee;
+      }
+      .addr {
+        color: #ddd;
+      }
+      .copy {
+        color: #ddd;
+      }
+    }
+  }
+  .popup_base {
+    background: rgba(0, 0, 0, 0.4);
+    .pop_content {
+      background-color: #232323;
+      .pop_list li {
+        color: #ddd;
+      }
+    }
+  }
 }
 
 
@@ -383,41 +512,6 @@ body.dark {
     }
   }
 }
-
-.btn_srch {
-  display: inline-block;
-  width: 70px;
-  height: 35px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 35px;
-  vertical-align: middle;
-  background: #384d75;
-  color: #fff !important;
-}
-
-.btn_bbs {
-  display: inline-block;
-  width: 70px;
-  height: 35px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 35px;
-  vertical-align: middle;
-  background: #384d75;
-  color: #fff !important;
-}
-
-.btn_baseColor {
-  display: inline-block;
-  width: 125px;
-  height: 50px;
-  line-height: 50px;
-  background: #384d75;
-  font-size: 20px;
-  color: #fff !important;
-}
-
 /* layout */
 
 .box_inner {
@@ -436,36 +530,7 @@ header {
   border-radius: 5px;
   z-index: 100;
   
-  /* dark 모드 용 토글 버튼 */
-  // .toggle-button {
-  //   position: relative;
-  //   left: 900px;
-  //   top: 10px;
-  //   .button-frame {
-  //     border: 1px solid #000;
-  //     width: 60px;
-  //     height: 20px;
-  //     border-radius: 15px;
-  //     .button {
-  //       border-radius: 15px;
-
-  //     }
-  //     .light-button {
-  //       float: left;
-  //       background-color: #f4d75e;
-  //       border: 1px solid #fff;
-  //     }
-  //     .dark-button {
-  //       float: left;
-  //       margin-left: 22px;
-  //       line-height: 17px;
-  //     }
-  //   }
-  // }
-
   .header_area {
-
-    /* position: relative; */
     h1 {
       float: left;
       padding: 5px 0 0;
@@ -492,6 +557,42 @@ header {
 .header_cont {
   float: right;
   width: 680px;
+
+  /* dark 모드 용 토글 버튼 */
+  .toggle-button {
+    position: relative;
+    left: 160px;
+    top: 30px;
+    width: 50px;
+    height: 25px;
+    margin: 0 auto;
+    cursor: pointer;
+    >.toggle-button-switch {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 23px;
+      height: 23px;
+      background-color: #fff;
+      border-radius: 100%;
+      transition: left 0.3s;
+    }
+    >.toggle-button-text {
+      display: flex;
+      background-color: #3dbf87;
+      border-radius: 12px;
+      box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .75);
+      transition: background-color .3s;
+
+      >.toggle-button-text-on,
+      >.toggle-button-text-off {
+        width: 50%;
+        line-height: 25px;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
 
   .util {
     text-align: right;
@@ -558,61 +659,6 @@ header {
 }
 
 /* End-header_cont */
-
-/* gnb 하위 메뉴 */
-.gnb_depth {
-  position: absolute;
-  left: 0;
-  top: 113px;
-  width: 100%;
-  background: rgba(250, 100, 0, 0.85);
-  z-index: 100;
-  display: none;
-
-  .submenu_list {
-    width: 1050px;
-    margin: 0 auto;
-    text-align: left;
-
-    li {
-      display: inline;
-
-      a {
-        display: inline-block;
-        padding: 20px;
-      }
-
-      &:last-child a {
-        padding-right: 0;
-      }
-
-      a.on {
-        color: #fff;
-      }
-    }
-  }
-}
-
-/* End-gnb_depth */
-.gnb_depth2_1 .submenu_list {
-  box-sizing: border-box;
-  padding-left: 480px;
-}
-
-.gnb_depth2_2 .submenu_list {
-  box-sizing: border-box;
-  padding-left: 600px;
-}
-
-.gnb_depth2_3 .submenu_list {
-  box-sizing: border-box;
-  padding-left: 730px;
-}
-
-.gnb_depth2_4 .submenu_list {
-  box-sizing: border-box;
-  padding-left: 940px;
-}
 
 /* footer */
 footer {
@@ -1016,74 +1062,7 @@ footer {
       background-image: url(../images/btn_lastpage.png);
     }
   }
-}
-/* 퀵메뉴 부분 */
-.quick_area {
-  $c28: #282828;
-  $c4d: #4d4d4d;
-  $ca3: #a3a3a3;
-  position: fixed;
-  top: 171px;
-  right: 0;
-  width: 94px;
-  z-index: 100;
-
-  .quick_list {
-    li {
-      text-align: center;
-      background: $c28;
-      font-size: 15px;
-
-      a {
-        display: block;
-        padding: 15px 0;
-        border-top: 1px solid $c4d;
-
-        h3 {
-          padding-bottom: 10px;
-          color: #ddd;
-          letter-spacing: -2px;
-
-          em {
-            display: none;
-          }
-        }
-
-        p {
-          line-height: 1.3;
-          font-size: 12px;
-          color: #fff;
-        }
-      }
-
-      &:first-child a {
-        border-top: none;
-      }
-
-      &:last-child a h3 {
-        padding-bottom: 0;
-      }
-    }
-  }
-}
-
-.to_top {
-  $ca3: #a3a3a3;
-  text-align: center;
-  background: #fff;
-
-  a {
-    display: block;
-    height: 45px;
-    box-sizing: border-box;
-    text-indent: -9999px;
-    overflow: hidden;
-    border-left: 1px solid $ca3;
-    border-bottom: 1px solid $ca3;
-    background: url(../images/ico_totop.png) no-repeat center;
-    background-size: 50%;
-  }
-}
+} 
 
 /* End-quickmenu */
 .popup_base {
@@ -1105,8 +1084,8 @@ footer {
 
     .btn_xpop {
       position: absolute;
-      right: 0;
-      top: -55px;
+      right: 5px;
+      top: 5px;
 
       a {
         display: block;
@@ -1820,17 +1799,6 @@ h1.loginTit {
     }
   }
 
-  .gnb_depth .submenu_list {
-    /* gnb 간격 줄 */
-    width: 100%;
-    padding-left: 52%;
-
-    li a {
-      /*  */
-      padding: 20px;
-    }
-  }
-
   #container {
     padding-bottom: 20px;
   }
@@ -1855,29 +1823,6 @@ h1.loginTit {
 
     .snslink li {
       margin-left: 15px;
-    }
-  }
-
-  .quick_area .quick_list {
-    display: none;
-  }
-
-  .to_top {
-    position: fixed;
-    right: 20px;
-    bottom: 112px;
-    text-align: center;
-    background: none;
-    z-index: 100;
-
-    a {
-      display: block;
-      width: 45px;
-      height: 45px;
-      border-left: none;
-      border-bottom: none;
-      background: url(../images/ico_totop_mo.png) no-repeat center;
-      background-size: 45px;
     }
   }
 
@@ -1908,29 +1853,6 @@ h1.loginTit {
         모바일 스타일
 ****************************************************************/
 @media all and (max-width: 800px) {
-  .btn_bbs {
-    display: inline-block;
-    width: 100%;
-    height: 35px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 35px;
-    vertical-align: middle;
-    background: #384d75;
-    color: #fff !important;
-  }
-
-  .btn_baseColor {
-    display: inline-block;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background: #384d75;
-    font-weight: bold;
-    font-size: 20px;
-    color: #fff !important;
-  }
-
   .box_inner {
     width: 100%;
   }
@@ -2101,10 +2023,6 @@ h1.loginTit {
     }
   }
 
-  .gnb_depth {
-    display: none;
-  }
-
   /* main rolling */
   .main_rolling_pc {
     display: none;
@@ -2247,117 +2165,6 @@ h1.loginTit {
       .mainI {
         max-width: 90%;
       }
-    }
-  }
-
-  .quick_area {
-    $c3a: #3a3e46;
-    $c76: #76787e;
-
-    .quick_list {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-
-      li {
-        float: left;
-        width: 31%;
-        text-align: left;
-        background: $c3a;
-        font-size: 15px;
-
-        +li {
-          width: 37%;
-        }
-
-        +li+li {
-          width: 32%;
-        }
-
-        &:first-child::after {
-          content: "";
-          display: inline-block;
-          width: 1px;
-          height: 16px;
-          position: absolute;
-          left: 31%;
-          top: 50%;
-          margin-top: -8px;
-          background: $c76;
-        }
-
-        &:last-child::before {
-          content: "";
-          display: inline-block;
-          width: 1px;
-          height: 16px;
-          position: absolute;
-          right: 32%;
-          top: 50%;
-          margin-top: -8px;
-          background: $c76;
-        }
-
-        a {
-          display: block;
-          padding: 10px 0;
-          border-top: none;
-          color: #fff;
-
-          h3 {
-            height: 37px;
-            line-height: 37px;
-            padding-bottom: 0;
-            padding-left: 45px;
-            background: url(../images/ico_phone_mobtm.png) no-repeat 20px center;
-            background-size: 20px;
-            color: #fff;
-            letter-spacing: -1px;
-
-            em {
-              display: inline;
-            }
-          }
-
-          p {
-            display: none;
-          }
-        }
-
-        +li a h3 {
-          background: url(../images/ico_katalk_mobtm.png) no-repeat 20px center;
-          background-size: 20px;
-        }
-
-        +li+li a h3 {
-          background: url(../images/ico_contact_mobtm.png) no-repeat 20px center;
-          background-size: 20px;
-        }
-      }
-    }
-  }
-
-  .to_top {
-    position: fixed;
-    right: 20px;
-    bottom: 100px;
-    text-align: center;
-    background: none;
-    z-index: 100;
-
-    a {
-      display: block;
-      width: 45px;
-      height: 45px;
-      border-left: none;
-      border-bottom: none;
-      background: url(../images/ico_totop_mo.png) no-repeat center;
-      background-size: 45px;
-    }
-
-    &.hide {
-      display: none;
     }
   }
 
@@ -2730,14 +2537,5 @@ h1.loginTit {
         }
       }
     }
-  }
-}
-
-/****************************************************************
-        iPhone 5 스타일
-****************************************************************/
-@media all and (max-width: 320px) {
-  .quick_area .quick_list li a h3 {
-    letter-spacing: -2px;
   }
 }

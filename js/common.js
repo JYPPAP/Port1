@@ -2,15 +2,6 @@ $(document).ready(function () {
   /* 로딩이 완료되면 함수 실행. */
   $("a.s_point").smoothScroll();
 
-  /* 스크롤하여 내려와야 top 버튼이 보이도록 함.
-  첫 상태는 탑버튼이 퀵메뉴 아래에 붙어있다가 일정한 위치가 되면 붙어있던걸 화면 하단으로 옮겨놔야 하기 때문이다.
-   */
-  if ($(document).scrollTop() < 50) $(".to_top").addClass("hide");
-  else $(".to_top").removeClass("hide");
-  $(window).scroll(function () {
-    if ($(document).scrollTop() < 50) $(".to_top").addClass("hide");
-    else $(".to_top").removeClass("hide");
-  });
   // 모바일 메뉴 띄움
   /* 위쪽에서 800 아래로 내려 갈 때 메뉴를 어떻게 할 것인지 설정했다.
   그래서 모바일 화면에서는 원래의 gnb가 openMOgnb로 대체되고 클릭했을 때 header에 on클래스를 주고

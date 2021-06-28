@@ -25,6 +25,8 @@
   <!-- js -->
   <script src="js/rollmain.js"></script>
   <script src="js/common.js" defer></script>
+  <script src="js/darkmode.js" defer></script>
+
 </head>
 
 <body>
@@ -36,12 +38,6 @@
   <div id="wrap">
     <!-- Header -->
     <header id="header">
-      <!-- <div class="toggle-button">
-        <div class="button-frame">
-          <div class="button light-button"><i class="far fa-sun"></i></div>
-          <div class="button dark-button"><i class="far fa-moon"></i></div>
-        </div>
-      </div> -->
       <div class="header_area box_inner clear">
         <!-- 
           box_inner는 사이즈별로 너비와 마진을 줘서 일괄적으로 관리를 했다.
@@ -59,6 +55,15 @@
         </p>
         <!-- header_cont -->
         <div class="header_cont">
+          <div class="toggle-button">
+            <div class="toggle-button-switch"></div>
+              <div class="toggle-button-text">
+                <div class="toggle-button-text-on">
+                  <i class="far fa-sun fa-lg"></i></div>
+                <div class="toggle-button-text-off">
+                  <i class="far fa-moon fa-lg"></i></div>
+              </div>
+          </div>
           <ul class="util clear">
             <li><a href="login.html">LOGIN</a></li>
             <li><a href="join.html">JOIN</a></li>
