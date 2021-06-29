@@ -496,7 +496,29 @@ body.dark {
       }
     }
   }
-}
+  .location_area h2.tit_page {
+    color: #745582;
+  }
+  .bodytext_area.Top_music {
+    .con-wrap {
+      .con {
+        border-color: #666;
+        background-color: #444;
+        >a {
+          background-color: #ddd;
+        }
+        h3 {
+          background-color: #666;
+          color: #ddd;
+        }
+        p {
+          color: #bbb;
+          
+        }
+      }
+    }
+  }
+}   /* end-darkMode */
 
 
 /* button_style */
@@ -537,7 +559,7 @@ header {
 
       a {
         display: block;
-        width: 300px;
+        width: 250px;
         height: 100px;
         background: url('../images/logo/lightLogo.png');
         background-position: center;
@@ -561,8 +583,8 @@ header {
   /* dark 모드 용 토글 버튼 */
   .toggle-button {
     position: relative;
-    left: 160px;
-    top: 30px;
+    left: 100px;
+    top: 20px;
     width: 50px;
     height: 25px;
     margin: 0 auto;
