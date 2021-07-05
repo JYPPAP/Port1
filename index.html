@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Music Library</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/logo/favicon.ico" type="image/x-icon">
   <!-- font-awesome 5.8.2 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <!-- jQuery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <!-- 웹페이지 내의 각 엘리먼트에 움직임을 줄 수 있는 jQuery plugin -->
@@ -18,10 +18,12 @@
   <script src="assets/jquery.smooth-scroll.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
   <!-- css -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.js'></script>
+  <!-- <script src="assets/swiper.min.js"></script> -->
   <link rel="stylesheet" href="assets/swiper.min.css" />
   <!-- 모바일 환경에서 손가락을 이용한 슬라이드 전환 효과 -->
-  <link rel="stylesheet" href="css/common.css" />
-  
+  <link rel="stylesheet" href="css/common.css"/>
+
   <!-- js -->
   <script src="js/rollmain.js"></script>
   <script src="js/common.js" defer></script>
@@ -58,12 +60,12 @@
           <ul class="util clear">
             <div class="toggle-button">
               <div class="toggle-button-switch"></div>
-                <div class="toggle-button-text">
-                  <div class="toggle-button-text-on">
-                    <i class="far fa-sun fa-lg"></i></div>
-                  <div class="toggle-button-text-off">
-                    <i class="far fa-moon fa-lg"></i></div>
-                </div>
+              <div class="toggle-button-text">
+                <div class="toggle-button-text-on">
+                  <i class="far fa-sun fa-lg"></i></div>
+                <div class="toggle-button-text-off">
+                  <i class="far fa-moon fa-lg"></i></div>
+              </div>
             </div>
             <li><a href="login.html">LOGIN</a></li>
             <li><a href="join.html">JOIN</a></li>
@@ -71,16 +73,16 @@
           <nav>
             <ul class="gnb clear">
               <li>
-                <a href="topmusic.html">TOP MUSIC</a>
+                <a href="topmusic.html"><i class="fas fa-crown"></i>TOP MUSIC</a>
               </li>
               <li>
-                <a href="musiclib.html">MUSIC LIBRARY</a>
+                <a href="musiclib.html"><i class="fas fa-book"></i>MUSIC LIBRARY</a>
               </li>
               <li>
-                <a href="notice_view.html">NOTICE</a>
+                <a href="notice_view.html"><i class="fas fa-exclamation-circle"></i>NOTICE</a>
               </li>
               <li>
-                <a href="mypage.html">MY PAGE</a>
+                <a href="mypage.html"><i class="fas fa-home"></i>MY PAGE</a>
               </li>
             </ul>
           </nav>
@@ -167,8 +169,6 @@
             </div>
           </div>
           <div class="swiper-pagination"></div>
-          <!-- <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div> -->
         </div>
         <!-- End-swiper-container -->
       </div>
@@ -180,7 +180,7 @@
           <ul class="place_list box_inner clear">
             <li>
               <a href="#" onclick="$('.popup_base').css('height', $(document).height());$('.contact_pop').show();">
-              <!-- <a href="javascript:;"> -->
+                <!-- <a href="javascript:;"> -->
                 <img src="./images/mainbg/pixel_pig.png" alt="">
                 <h3>Di Young - Pixel Pig</h3>
                 <p class="txt">
@@ -227,174 +227,169 @@
 
       <div class="appbbs_area">
         <div class="appbbs_box box_inner clear">
-          <ul class="mainM">
-            <li class="mainI mainI1">
+          <div class="mainM">
+            <div class="mainI mainI1 swiper-container">
               <h2>Charts: Top 50</h2>
               <p>The most played tracks on Free Music Library this week</p>
-              <ul class="subM clear">
-                <li class="subI subI01 le">
+              <div class="subM swiper-wrapper clear">
+                <div class="subI subI01 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">All music genres</p>
                   <p class="mTag">Top 50</p>
-                </li>
-                <li class="subI subI02 le">
+                </div>
+                <div class="subI subI02 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Global Beats</p>
                   <p class="mTag">Top 50</p>
-                </li>
-                <li class="subI subI03 le">
+                </div>
+                <div class="subI subI03 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Dance & EDM</p>
                   <p class="mTag">Top 50</p>
-                </li>
-                <li class="subI subI04 le">
+                </div>
+                <div class="subI subI04 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Electronic</p>
                   <p class="mTag">Top 50</p>
-                </li>
-                <li class="subI subI05 le">
+                </div>
+                <div class="subI subI05 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">House</p>
                   <p class="mTag">Top 50</p>
-                </li>
-              </ul>
-              <div class="btn prev"></div>
-              <div class="btn next"></div>
-            </li>
-            <li class="mainI mainI2">
+                </div>
+              </div>
+            </div>
+
+            <div class="mainI mainI2 swiper-container">
               <h2>Study</h2>
               <p>Popular playlists from the Free Music Library</p>
-              <ul class="subM clear">
-                <li class="subI subI01 le">
+              <div class="subM swiper-wrapper clear">
+                <div class="subI subI01 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Stella's Coffee House</p>
                   <p class="mTag">Mah</p>
-                </li>
-                <li class="subI subI02 le">
+                </div>
+                <div class="subI subI02 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Jazz hip 4</p>
                   <p class="mTag">soo</p>
-                </li>
-                <li class="subI subI03 le">
+                </div>
+                <div class="subI subI03 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Piano Deep Concentration</p>
                   <p class="mTag">Nitza Md</p>
-                </li>
-                <li class="subI subI04 le">
+                </div>
+                <div class="subI subI04 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">lofi 4 studying</p>
                   <p class="mTag">suri</p>
-                </li>
-                <li class="subI subI05 le">
+                </div>
+                <div class="subI subI05 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">CHILL STUDY VIBES</p>
                   <p class="mTag">alkhaw</p>
-                </li>
-              </ul>
-              <div class="btn prev"></div>
-              <div class="btn next"></div>
-            </li>
-            <li class="mainI mainI3">
+                </div>
+              </div>
+            </div>
+
+            <div class="mainI mainI3 swiper-container">
               <h2>Charts: New & hot</h2>
               <p>Up-and-coming tracks on Free Music Library</p>
-              <ul class="subM clear">
-                <li class="subI subI01 le">
+              <div class="subM swiper-wrapper clear">
+                <div class="subI subI01 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">All music genres</p>
                   <p class="mTag">New & hot</p>
-                </li>
-                <li class="subI subI02 le">
+                </div>
+                <div class="subI subI02 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Alternative Rock</p>
                   <p class="mTag">New & hot</p>
-                </li>
-                <li class="subI subI03 le">
+                </div>
+                <div class="subI subI03 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Ambient</p>
                   <p class="mTag">New & hot</p>
-                </li>
-                <li class="subI subI04 le">
+                </div>
+                <div class="subI subI04 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Classical</p>
                   <p class="mTag">New & hot</p>
-                </li>
-                <li class="subI subI05 le">
+                </div>
+                <div class="subI subI05 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Country</p>
                   <p class="mTag">New & hot</p>
-                </li>
-              </ul>
-              <div class="btn prev"></div>
-              <div class="btn next"></div>
-            </li>
-            <li class="mainI mainI4">
+                </div>
+              </div>
+            </div>
+
+            <div class="mainI mainI4 swiper-container">
               <h2>Chill</h2>
               <p>Popular playlists from the Free Music Library</p>
-              <ul class="subM clear">
-                <li class="subI subI01 le">
+              <div class="subM swiper-wrapper clear">
+                <div class="subI subI01 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Morning Chillout</p>
                   <p class="mTag">Mighty</p>
-                </li>
-                <li class="subI subI02 le">
+                </div>
+                <div class="subI subI02 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">musicas relaxantes</p>
                   <p class="mTag">lihcogine</p>
-                </li>
-                <li class="subI subI03 le">
+                </div>
+                <div class="subI subI03 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Chill Mix(High On Chill)</p>
                   <p class="mTag">LukasM</p>
-                </li>
-                <li class="subI subI04 le">
+                </div>
+                <div class="subI subI04 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Never Chill Before</p>
                   <p class="mTag">Pineapple Express.</p>
-                </li>
-                <li class="subI subI05 le">
+                </div>
+                <div class="subI subI05 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Chillax Mood</p>
                   <p class="mTag">J e z i k a ♡</p>
-                </li>
-              </ul>
-              <div class="btn prev"></div>
-              <div class="btn next"></div>
-            </li>
-            <li class="mainI mainI5">
+                </div>
+              </div>
+            </div>
+
+            <div class="mainI mainI5 swiper-container">
               <h2>Party</h2>
               <p>Popular playlists from the Free Music Library</p>
-              <ul class="subM clear">
-                <li class="subI subI01 le">
+              <div class="subM swiper-wrapper clear">
+                <div class="subI subI01 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Best of Deep House (Vol. 02)</p>
                   <p class="mTag">Westcoast Radio (EDM)</p>
-                </li>
-                <li class="subI subI02 le">
+                </div>
+                <div class="subI subI02 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Summer 2k17</p>
                   <p class="mTag">lilly manning</p>
-                </li>
-                <li class="subI subI03 le">
+                </div>
+                <div class="subI subI03 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Ja feel Tomorrowland Weekender</p>
                   <p class="mTag">Ja feel</p>
-                </li>
-                <li class="subI subI04 le">
+                </div>
+                <div class="subI subI04 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">Best Of MrRevillz</p>
                   <p class="mTag">Ilyana Azman</p>
-                </li>
-                <li class="subI subI05 le">
+                </div>
+                <div class="subI subI05 swiper-slide">
                   <a href="javascript:;"></a>
                   <p class="mName">T-4 Techno</p>
                   <p class="mTag">Westcoast Radio (EDM)</p>
-                </li>
-              </ul>
-              <div class="btn prev"></div>
-              <div class="btn next"></div>
-            </li>
-          </ul>
-        </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- mainM -->
+        </div><!-- appbbs_box -->
       </div>
       <!-- End-appbbs_area -->
     </div>
@@ -431,20 +426,6 @@
   </div>
   <!-- End-wrap -->
 
-  <script src="assets/swiper.min.js"></script>
-  <script>
-    /* 슬라이더 작동을 위한 JS */
-    $(document).ready(function () {
-      var swiper = new Swiper(".swiper-container", {
-        loop: true,
-        autoplay: 5500,
-        autoplayDisableOnInteraction: false,
-        pagination: ".swiper-pagination",
-        paginationClickable: true,
-      });
-    });
-  </script>
-
   <!-- contact_PopUp -->
   <div class="popup_base contact_pop">
     <div class="pop_content">
@@ -454,7 +435,9 @@
       <ul class="pop_list">
         <li>
           <h2 class="tit_pop">Di Young - Pixel Pig</h2>
-          <iframe class="player" width="480" height="315" src="https://www.youtube.com/embed/TiC7_167hQ0?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque" title="YouTube video player"></iframe>
+          <iframe class="player" width="480" height="315"
+            src="https://www.youtube.com/embed/TiC7_167hQ0?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque"
+            title="YouTube video player"></iframe>
           <div class="pop_txt">
             <p>
               🎵 Track Info:<br>
@@ -483,7 +466,9 @@
       <ul class="pop_list">
         <li>
           <h2 class="tit_pop">We Are One</h2>
-          <iframe class="player" width="480" height="315" src="https://www.youtube.com/embed/Ssvu2yncgWU?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque" title="YouTube video player"></iframe>
+          <iframe class="player" width="480" height="315"
+            src="https://www.youtube.com/embed/Ssvu2yncgWU?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque"
+            title="YouTube video player"></iframe>
           <div class="pop_txt">
             <p>
               🎵 Track Info:<br>
@@ -512,11 +497,13 @@
       <ul class="pop_list">
         <li>
           <h2 class="tit_pop">High [NCS Release]</h2>
-          <iframe class="player" width="480" height="315" src="https://www.youtube.com/embed/R8ZRCXy5vhA?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque" title="YouTube video player"></iframe>
+          <iframe class="player" width="480" height="315"
+            src="https://www.youtube.com/embed/R8ZRCXy5vhA?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque"
+            title="YouTube video player"></iframe>
           <div class="pop_txt">
             <p>
               🎵 Track Info:<br>
-<br>
+              <br>
               Title: High [NCS Release] by JPB<br>
               Genre and Mood: Dance & Electronic + Bright<br>
               ––––––––––––––––––––––––––––––<br>

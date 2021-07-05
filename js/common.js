@@ -31,95 +31,55 @@ $(document).ready(function () {
     if (parseInt($("header").css("width")) > 800) $(".header_cont").show();
   });
 
-  // 프로그램 소개 - 더보기 / 접기 작동
-  $(".program_list li .btn_more a").click(function () {
-    /* ~~~의 a 태그가 클릭되면 그 위로 2번째 조상요소에서 .subtxt 라는 클래스를 찾아서 그 요소의 css 가 dn이면
-    그 요소의 css를 di로 변경
-    그리그 ~~~의 a 태그에 '접기'텍스트 삽입.
-    아니면 아래 실행.
-     */
-    if ($(this).parent().parent().find(".subtxt").css("display") == "none") {
-      $(this).parent().parent().find(".subtxt").css("display", "inline");
-      $(this).text("접기");
-    } else {
-      $(this).parent().parent().find(".subtxt").css("display", "none");
-      $(this).text("더보기");
+  /* 슬라이더 작동을 위한 JS */
+  $(document).ready(function () {
+    var swiper = new Swiper(".main_rolling_mobile .swiper-container", {
+      loop: true,
+      autoplay: 5500,
+      autoplayDisableOnInteraction: false,
+      pagination: ".swiper-pagination",
+      paginationClickable: true,
+    });
+  });
+});
+
+/* 슬라이드 아이템 */
+$(document).ready(function () {
+  var mySwiper = new Swiper(".mainM .swiper-container", {
+    observer: true,
+    observerParents: true,
+    loop: false,
+    loopFillGroupWidthBlank: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 4.2,
+        slidesPerGroup: 4,
+        spaceBetween: 15,
+      },
+      799: {
+        slidesPerView: 3.3,
+        slidesPerGroup: 3,
+        spaceBetween: 5,
+      },
+      489: {
+        slidesPerView: 2.5,
+        slidesPerGroup: 2,
+        spaceBetween: 5,
+      },
+      
     }
   });
 });
 
-/* main 페이지 버튼 */
 $(function() {
-  var next = $('.mainM .mainI .next');
-  var prev = $('.mainM .mainI .prev');
-  var mItem = $('.mainM .mainI');
-  var frame = mItem.width();
-  var sItem = $('.subM .subI');
-  var sc = sItem.length;
-  var mc = mItem.length;
-  var w = sItem.width();
-  var cnt = 0;
-
-  // var vc = Math.floor(frame / w);
-  var vc = Math.ceil(frame / w);
-  var cont = Math.round(sc / (vc * mc));
-
-  function itemSort() {
-    for (var i in mItem) {
-      for (var j in sItem) {
-        mItem.eq(i).find(sItem).eq(j).css({ left: j * w });
-      }
-    }
-  }
-  itemSort();
-  
-  /* 리사이즈 했을 때 리스트 넘김 초기화 */
-  $(window).resize(function() {
-    itemSort();
-    /* 리사이즈 했을 때 버튼 및 카운트 초기화*/
-    next.show();
-    prev.hide();
-    cnt = 0;
-
-    frame = mItem.width();
-    vc = Math.ceil(frame / w);
-    cont = Math.round(sc / (vc * mc));
-    
-    return frame, vc, cont;
-  });
-    
-  /* 마우스 올렸을 때 애니메이션 */
-  next.mouseover(function(){
-    $(this).parent().find(sItem).stop().animate({left: '-=20'}, 'fast');
-    $(this).parent().find(sItem).animate({left: '+=20'}, 'fast');
-  });
-  prev.mouseover(function(){
-    $(this).parent().find(sItem).stop().animate({left: '+=20'}, 'fast');
-    $(this).parent().find(sItem).animate({left: '-=20'}, 'fast');
-  });
-
-  /* 버튼 클릭시 */
-  next.click(function(){
-    cnt++;
-    $(this).parent().find(sItem).stop().animate({left: '-=100%'}, 'fast');
-    if(cnt === cont){
-      $(this).hide();
-    }
-    $(this).siblings(prev).show();
-    return cnt;
-  });
-  
-  prev.click(function(){
-    $(this).parent().find(sItem).stop().animate({left: '+=100%'}, 'fast');
-    /* if문을 사용하지 않는 방법 찾아보기. */
-    if(cnt == 1){
-      $(this).hide();
-    }
-    $(this).siblings(next).show();
-    cnt--;
-    return cnt;
-  });
-
   /* 팝업 관련 설정. */
   $('.popup_base .btn_xpop >a').click(function () {
     $(this).parents('.popup_base').hide();
