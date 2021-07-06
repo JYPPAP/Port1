@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Music Library</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/common.css">
+  <!-- font-awesome 5.8.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script src='js/common.js'></script>
+  <script src="js/darkmode.js" defer></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="header_area login_area box_inner clear">
+      <h1><a href="index.html">Free Music Library</a></h1>
+      <div class="header_cont">
+        <ul class="util clear">
+          <div class="toggle-button">
+            <div class="toggle-button-switch"></div>
+              <div class="toggle-button-text">
+                <div class="toggle-button-text-on">
+                  <i class="far fa-sun fa-lg"></i></div>
+                <div class="toggle-button-text-off">
+                  <i class="far fa-moon fa-lg"></i></div>
+              </div>
+          </div>
+          <li><a href="login.html">LOGIN</a></li>
+          <li><a href="join.html">JOIN</a></li>
+        </ul>
+      </div>
+  </header>
+  <!-- End-header -->
+
+  <div id="login-wrap">
+    <form action="" method="POST">
+
+      <div class="login-body">
+        <div class="input-box">
+            <input id="username" type="text" name="username" placeholder="아이디">
+            <label for="username">아이디</label>
+        </div>
+        <div class="input-box">
+            <input id="password" type="password" name="password" placeholder="비밀번호">
+            <label for="password">비밀번호</label>
+        </div>
+      </div>
+      
+      <div class="login-footer">
+        <button id='forgot' class="btn btn-pwd">비밀번호 찾기</button>
+        <button class="btn btn-join">회원가입</button>
+        <input type="submit" value="로그인" class="btn btn-login">
+      </div>
+
+  </div><!-- End-#container -->
+
+
+
+
+
+  <footer>
+    <div class="foot_area box_inner">
+      <ul class="foot_list clear">
+        <li><a href="javascript:;">이용약관</a></li>
+        <li><a href="javascript:;">개인정보취급방침</a></li>
+      </ul>
+      <h2>Free Music Library</h2>
+      <p class="addr">
+        인천광역시 부평구 부평역 1번출구
+        <span class="gubun">/</span>
+        <span class="br_line">대표전화
+          <span class="space0">032-1234-5678</span>
+          <span class="gubun">/</span>
+          <span class="br_line">E-mail :
+            <span class="space0"> yungsu222@naver.com</span>
+          </span>
+        </span>
+      </p>
+      <p class="copy box_inner">
+        &copy; Free Music Library
+      </p>
+      <ul class="snslink clear">
+        <li><a href="https://www.youtube.com/user/NoCopyrightSounds">NCS</a></li>
+        <li><a href="https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA">Audio Library</a></li>
+        <li><a href="https://soundcloud.com/discover">SoundCloud</a></li>
+      </ul>
+    </div>
+  </footer>
+</div><!-- End-#wrap -->
+</body>
+
+</html>

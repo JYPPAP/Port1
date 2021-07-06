@@ -2,6 +2,7 @@
 @import url('layout_base.css');
 @import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
 // 초기화 > reset.css 를 참고하기.
 // CSS를 최대한 이용하면 좋은 이유는
@@ -390,26 +391,25 @@ body.dark {
           background: url('../images/logo/darkLogo.png');
         }
       }
-    }
-  }
-  .util {
-    
-    li {
-      a {
-        color: #bbb;
-        &:hover {
-          color: #eee;
+      .util {
+        
+        li {
+          a {
+            color: #bbb;
+            &:hover {
+              color: #eee;
+            }
+          }
         }
       }
-    }
-  }
-  .gnb {
-    
-    li {
-      a {
-        color: #ddd;
-        &:hover {
-          color: #eee;
+      .gnb {
+        li {
+          a {
+            color: #ddd;
+            &:hover {
+              color: #eee;
+            }
+          }
         }
       }
     }
@@ -516,7 +516,10 @@ body.dark {
   .bodytext_area.Top_music {
     .con-wrap {
       .con {
-        border-color: #666;
+        background-image: linear-gradient(#444444, #444444),
+                          linear-gradient(to right, #ffcdf3aa, #65d3ffaa);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
         background-color: #444;
         >a {
           background-color: #ddd;
@@ -1395,19 +1398,24 @@ footer {
       width: 180px;
       margin-bottom: 30px;
       margin: 5px;
-      border: 1px solid #ddd;
+      border: 5px solid transparent;
       border-radius: 10px;
       margin-bottom: 25px;
       overflow: hidden;
-
+      background-image: linear-gradient(#ddd, #ddd),
+                        linear-gradient(to right, #c6ffdd, #fbd786, #fac8cb);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
       
       >a {
-        width: 100%;
+        width: auto;
         height: 200px;
         display: block;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        transition: all .3s;
+        overflow: hidden;
       }
       h3 {
         width: 100%;
@@ -1417,12 +1425,14 @@ footer {
         line-height: 20px;
         background-color: #eee;
         border-radius: 10px;
+        // box-shadow: 0px 0px 5px #eee;
+        font-family: 'Jost', sans-serif;
       }
       p {
         text-align: center;
         display: block;
         height: 20px;
-
+        font-family: 'Jost', sans-serif;
       }
     }
     .con01 >a { background-image: url(../images/bg/bg-01.jpg);}
@@ -1477,316 +1487,83 @@ footer {
     .con50 >a { background-image: url(../images/bg/bg-50.jpg);}
   }
 }
+/*==========
+    로그인
+  ===========*/
+.login_area {
 
+}
 
-/* login */
-// .login_wrap {
-//   width: 468px;
-//   margin: 50px auto 0;
-// }
+#login-wrap {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
 
-// h1.loginTit {
-//   text-align: center;
+form {
+  padding: 10px;
+}
 
-//   a {
-//     display: block;
+.input-box {
+  position: relative;
+  margin: 10px 0;
 
-//     img {
-//       width: 100%;
-//     }
-//   }
-// }
+  >input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0 5px 0;
+    font-size: 14pt;
+    width: 100%;
+  }
 
-// .login_list {
-//   width: 75%;
-//   margin: 70px auto 20px;
+  input {
+    &::placeholder {
+      color: transparent;
+    }
 
-//   li {
-//     position: relative;
-//     margin-bottom: 4px;
-//     height: 54px;
-//     box-sizing: border-box;
-//     padding-left: 50px;
-//     border-radius: 5px;
+    &:placeholder-shown+label {
+      color: #aaa;
+      font-size: 14pt;
+      top: 15px;
+    }
 
-//     a {
-//       display: block;
-//       height: 54px;
-//       box-sizing: border-box;
-//       line-height: 54px;
-//       text-align: center;
-//       /*       vertical-align: middle; */
-//       font-size: 14px;
-//       color: #fff;
-//     }
+    &:focus,
+    &:not(:placeholder-shown) {
+      border-bottom: 1px solid #8aa1a1;
+      outline: none;
+    }
 
-//     &:last-child {
-//       margin-bottom: 0;
-//     }
+  }
 
-//     &.kakao {
-//       background: #ffea26 url(../images/ico_kakao.png) no-repeat 15px 50%;
-//       background-size: 45px 45px;
+  input:focus+label,
+  label {
+    color: #8aa1a1;
+    font-size: 10pt;
+    pointer-events: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+  }
+}
 
-//       a {
-//         color: #202224;
-//       }
-//     }
+/*==========
+  회원가입
+===========*/
+#join-wrap {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 1200px;
+}
 
-//     &.naver {
-//       background: #00c300 url(../images/ico_naver.png) no-repeat 15px 50%;
-//       background-size: 45px 45px;
-//     }
-
-//     &.facebook {
-//       background: #405ea9 url(../images/ico_face.png) no-repeat 15px 50%;
-//       background-size: 45px 45px;
-//     }
-
-//     &.cellphone {
-//       background: #888 url(../images/ico_cellphone.png) no-repeat 15px 50%;
-//       background-size: 45px 45px;
-//     }
-//   }
-// }
-
-// .btnonoff_line {
-//   width: 75%;
-//   margin: 10px auto;
-//   text-align: center;
-
-//   .btn_onoff {
-//     margin-left: 5px;
-//     font-size: 14px;
-//   }
-// }
-
-// .switch {
-//   position: relative;
-//   display: inline-block;
-//   width: 35px;
-//   height: 22px;
-//   margin: 0;
-//   padding: 0;
-//   border-radius: 16px;
-//   background: #e5e5e5;
-//   vertical-align: top;
-//   appearance: none;
-//   cursor: pointer;
-//   z-index: 0;
-
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     left: 1px;
-//     top: 1px;
-//     width: 33px;
-//     height: 20px;
-//     border-radius: 15px;
-//     background: #fff;
-//     z-index: 1;
-//   }
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     left: 1px;
-//     top: 1px;
-//     width: 19px;
-//     height: 19px;
-//     border-radius: 20px;
-//     background: #fff;
-//     -webkit-transition-duration: 300ms;
-//     transition-duration: 300ms;
-//     -webkit-box-shadow: 0 2px 5px #999;
-//     box-shadow: 0 2px 5px #999;
-//     z-index: 2;
-//   }
-// }
-
-// .switchOn,
-// .switchOn::before {
-//   background: #1a57cb !important;
-// }
-
-// .switchOn::after {
-//   left: 15px !important;
-// }
-
-/* 회원가입 */
-// .appForm {
-//   margin: 40px auto 0;
-
-//   .info_pilsoo {
-//     position: relative;
-//     padding-left: 20px;
-//     padding-bottom: 10px;
-//     border-bottom: 2px solid #000;
-//     font-size: 15px;
-//     color: #f00;
-//   }
-
-//   .pilsoo_item::before {
-//     content: "*";
-//     display: inline-block;
-//     position: absolute;
-//     left: 5px;
-//     top: 3px;
-//     width: 15px;
-//     font-weight: bold;
-//     font-size: 17px;
-//     color: #f00;
-//   }
-
-//   .app_list {
-//     padding: 10px 0;
-//     border-bottom: 1px solid #ccc;
-
-//     li {
-//       padding: 8px 0;
-
-//       .tit_lbl {
-//         position: relative;
-//         float: left;
-//         width: 150px;
-//         box-sizing: border-box;
-//         padding-left: 20px;
-//         line-height: 42px;
-//         font-weight: bold;
-//         font-size: 17px;
-//         letter-spacing: -2px;
-//       }
-
-//       .app_content {
-//         float: right;
-//         width: 770px;
-
-//         * {
-//           vertical-align: top;
-//         }
-
-//         &.email_area .ico_space {
-//           display: inline-block;
-//           padding-top: 10px;
-//         }
-
-//         &.radio_area {
-//           height: 45px;
-//           box-sizing: border-box;
-//           padding-top: 12px;
-//         }
-
-//         &.checkbox_area {
-//           height: 45px;
-//           box-sizing: border-box;
-//           padding-top: 12px;
-//         }
-
-//         label {
-//           vertical-align: middle;
-//         }
-//       }
-
-//       .select_common {
-//         width: 160px;
-//         height: 45px;
-//         background-position: 100% 50%;
-//         border: 1px solid #ccc;
-
-//         select {
-//           width: 200px;
-//           height: 43px;
-//         }
-//       }
-
-//       textarea {
-//         height: 245px;
-//       }
-//     }
-//   }
-
-//   .info_line {
-//     padding: 10px 10px 20px;
-//     font-size: 15px;
-//   }
-// }
-
-// .btn_line {
-//   padding: 20px 0;
-
-//   a.btn_app {
-//     height: 37px;
-//     line-height: 37px;
-//     margin-left: 100px;
-//     font-size: 14px;
-//   }
-// }
-
-/* MYPAGE */
-// .myinfo {
-//   dt {
-//     width: 170px;
-//     height: 70px;
-//     line-height: 70px;
-//     text-align: center;
-//     background: #dfe3ea;
-//     font-size: 18px;
-//     background: #000;
-//     color: #fff;
-//   }
-
-//   dd {
-//     border-top: 2px solid #000;
-//   }
-// }
-
-// .regForm .reg_list {
-//   padding: 10px 0 0;
-//   background: url(../images/bg_reglist.png) repeat-y;
-
-//   li {
-//     min-height: 60px;
-//     padding: 0;
-//     border-bottom: 1px solid #ccc;
-
-//     .tit_lbl {
-//       position: relative;
-//       float: left;
-//       width: 150px;
-//       box-sizing: border-box;
-//       padding-left: 20px;
-//       line-height: 60px;
-//       font-weight: bold;
-//       font-size: 16px;
-//     }
-
-//     .reg_content {
-//       float: right;
-//       width: 770px;
-//       box-sizing: border-box;
-//       padding-left: 20px;
-//       padding-top: 25px;
-//       font-size: 15px;
-
-//       * {
-//         vertical-align: middle;
-//       }
-
-//       &.radio_area {
-//         padding-top: 20px;
-//       }
-
-//       label {
-//         vertical-align: middle;
-//       }
-
-//       .info_line {
-//         padding: 10px 10px 17px 0;
-//         font-size: 15px;
-//       }
-//     }
-//   }
-// }
 
 /****************************************************************
         태블릿 스타일
@@ -1838,28 +1615,6 @@ footer {
       margin-left: 15px;
     }
   }
-
-  /* 회원가입 */
-  .appForm .app_list li {
-    .tit_lbl {
-      width: 25%;
-    }
-
-    .app_content {
-      width: 75%;
-    }
-  }
-
-  /* MYPAGE */
-  .regForm .reg_list li {
-    .tit_lbl {
-      width: 21%;
-    }
-
-    .reg_content {
-      width: 75%;
-    }
-  }
 }
 
 /****************************************************************
@@ -1870,11 +1625,14 @@ footer {
     width: 100%;
   }
   body.dark {
-    .util {
-      background-color: #a3a6ab;
-    }
-    .gnb {
-      background-color: rgba($color: #83868b, $alpha: .8);
+    .header_cont {
+      border-radius: 15px;
+      /* fallback for old browsers */
+      background: #7F7FD5;
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, #7F7FD5, #86A8E7, #b38484);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, #6060e2, #5c8be4, #65e4db);
     }
   }
   header {
@@ -1942,8 +1700,14 @@ footer {
     float: none;
     width: 100%;
     top: -45px;
+    border-radius: 15px;
     position: relative;
-    background-color: rgba($color: #c2d1e5, $alpha: .8);
+    /* fallback for old browsers */
+    background: #7F7FD5;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
     display: none;
 
     .util {
@@ -1973,7 +1737,7 @@ footer {
 
         a {
           font-size: 16px;
-          color: #555;
+          color: #000;
         }
       }
     }
@@ -2002,13 +1766,13 @@ footer {
     }
 
     .gnb {
-      $c2: #83868b;
+      $c2: #37383b;
 
       float: none;
       box-sizing: border-box;
       padding-top: 0;
       height: auto;
-      border-top: 1px solid #83868b;
+      border-top: 1px solid $c2;
 
       li {
         float: left;
@@ -2016,7 +1780,7 @@ footer {
         text-align: left;
         box-sizing: border-box;
         border-bottom: 1px solid $c2;
-
+        border-radius: 15px;
         &:nth-child(odd) {
           border-right: 1px solid $c2;
         }
@@ -2033,7 +1797,7 @@ footer {
             font-size: 2em;
             margin-right: 10px;
             margin-top: 15px;
-            color: #72d6c9;
+            color: #00f8d7ce;
           }
         }
       }
@@ -2268,291 +2032,5 @@ footer {
   .bodytext_area {
     box-sizing: border-box;
     padding: 33px 20px 0;
-  }
-
-  /* 공지사항 */
-  .bbsListTbl {
-    width: 100%;
-    border-top: 2px solid #384d75;
-
-    th,
-    td {
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
-    th {
-      padding: 0;
-      border-bottom: 1px solid #ccc;
-      font-weight: bold;
-      font-size: 14px;
-
-      &:nth-child(1) {
-        display: none;
-      }
-
-      &:nth-child(2) {
-        width: 70%;
-      }
-
-      &:nth-child(3) {
-        display: none;
-      }
-
-      &:nth-child(4) {
-        width: 30%;
-      }
-    }
-
-    td {
-      text-align: center;
-      line-height: 1.3;
-      border-bottom: 1px solid #ccc;
-
-      &.tit_notice a {
-        display: block;
-      }
-
-      &:nth-child(1) {
-        display: none;
-      }
-
-      &:nth-child(2) {
-        width: 70%;
-      }
-
-      &:nth-child(3) {
-        display: none;
-      }
-
-      &:nth-child(4) {
-        width: 30%;
-      }
-    }
-  }
-
-  /* 공지사항 상세보기 */
-  .near_list {
-    display: none;
-  }
-
-  /* place_area */
-  .bodytext_area.place_area {
-    padding: 33px 0 0;
-  }
-
-  .login_wrap {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  h1.loginTit a {
-    display: block;
-  }
-
-  .login_list {
-    margin: 50px auto 20px;
-
-    li {
-      height: 50px;
-
-      a {
-        height: 50px;
-        line-height: 50px;
-      }
-    }
-  }
-
-  /* 회원가입 */
-  .appForm {
-    margin: 20px auto;
-
-    .pilsoo_item::before {
-      top: 1px;
-    }
-
-    .app_list li {
-      position: relative;
-      padding: 10px 0;
-      border-bottom: 1px solid #ccc;
-
-      &:last-child {
-        border-bottom: none;
-        padding-bottom: 10px;
-      }
-
-      .tit_lbl {
-        float: none;
-        width: auto;
-        line-height: 30px;
-      }
-
-      .app_content {
-        float: none;
-        width: auto;
-
-        * {
-          vertical-align: middle;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="password"] {
-          border: none;
-          width: 100% !important;
-        }
-
-        &.email_area {
-          padding: 5px 0 0;
-          font-size: 0;
-
-          input[type="text"],
-          input[type="password"] {
-            border: 1px solid #ccc;
-            width: 45% !important;
-            font-size: 14px;
-          }
-
-          .ico_space {
-            width: 10% !important;
-            text-align: center;
-            font-size: 14px;
-          }
-        }
-
-        &.radio_area {
-          padding-left: 20px;
-          height: 40px;
-          padding-top: 10px;
-        }
-
-        &.checkbox_area {
-          padding-left: 20px;
-          height: 40px;
-          padding-top: 10px;
-        }
-      }
-
-      .select_common {
-        width: 100%;
-        height: 45px;
-        margin-top: 10px;
-
-        select {
-          width: 100%;
-          height: 39px;
-        }
-      }
-
-      textarea {
-        height: 130px;
-      }
-    }
-
-    .btn_line {
-      padding: 20px 0;
-
-      a.btn_app {
-        margin-left: 0;
-      }
-    }
-  }
-
-  /* MYPAGE */
-  .mypageTab {
-    position: relative;
-    width: 100%;
-    margin: 20px auto 0;
-    padding-top: 50px;
-
-    dt {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100px;
-
-      &.t2 {
-        left: 101px;
-      }
-
-      a {
-        display: block;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        background: #dfe3ea;
-        font-size: 18px;
-        color: #6f788b;
-
-        &.on {
-          background: #000;
-          color: #fff;
-        }
-      }
-    }
-
-    dd.hidetab {
-      display: none;
-    }
-
-    dd {
-      border-top: 2px solid #000;
-    }
-  }
-
-  .regForm {
-    width: 100%;
-    margin: 0 auto;
-
-    .reg_list {
-      padding: 10px 0 0;
-      background: none;
-
-      li {
-        position: relative;
-        min-height: 50px;
-        padding: 0;
-        border-bottom: 1px solid #ccc;
-
-        .tit_lbl {
-          position: relative;
-          float: none;
-          width: auto;
-          box-sizing: border-box;
-          padding-left: 10px;
-          line-height: 50px;
-          font-weight: bold;
-          font-size: 16px;
-        }
-
-        .reg_content {
-          float: none;
-          width: auto;
-          box-sizing: border-box;
-          padding-left: 10px;
-          padding-top: 0;
-          padding-bottom: 20px;
-          font-size: 15px;
-
-          * {
-            vertical-align: middle;
-          }
-
-          &.radio_area {
-            padding-top: 5px;
-          }
-
-          label {
-            vertical-align: middle;
-          }
-
-          .info_line {
-            padding: 10px 10px 15px 0;
-            line-height: 1.4;
-            font-size: 15px;
-          }
-        }
-      }
-    }
   }
 }

@@ -69,7 +69,7 @@ $(document).ready(function () {
         slidesPerGroup: 3,
         spaceBetween: 5,
       },
-      489: {
+      500: {
         slidesPerView: 2.5,
         slidesPerGroup: 2,
         spaceBetween: 5,
