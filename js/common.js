@@ -30,7 +30,11 @@ $(document).ready(function () {
     /* 리사이즈 이벤트를 넣어서 화면의 크기가 변경되면 (header의 너비가 800 이상일 때) header_cont를 보이게 설정. */
     if (parseInt($("header").css("width")) > 800) $(".header_cont").show();
   });
-
+  
+  /* Menu alert */
+  var $altMenu1 = $('#header .header_cont .gnb li:nth-child(3) a');
+  // var altMenu2 = $('#header .header_cont .gnb li').nthChild(4);
+  
   /* 슬라이더 작동을 위한 JS */
   $(document).ready(function () {
     var swiper = new Swiper(".main_rolling_mobile .swiper-container", {

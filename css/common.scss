@@ -473,6 +473,10 @@ body.dark {
             color: #aaa;
           }
         }
+        .subI12 a {
+          border: none;
+          box-shadow: none;
+        }
       }
     }
   }
@@ -518,8 +522,8 @@ body.dark {
       .con {
         background-image: linear-gradient(#444444, #444444),
                           linear-gradient(to right, #ffcdf3aa, #65d3ffaa);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
         background-color: #444;
         >a {
           background-color: #ddd;
@@ -1495,16 +1499,38 @@ footer {
 /*==========
     로그인
   ===========*/
-
+.btn {
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  &:hover {
+    background-color: #ddd;
+  }
+}
 #login-wrap {
   display: grid;
   place-items: center;
   position: relative;
   width: 100%;
+  min-height: 500px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  background-image: url(../images/mainbg/login_main.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
   .login-frame {
-    padding: 0 50px 100px;
-    margin-top: 150px;
-    background-color: #555;
+    padding: 0 40px 100px;
+    // background-color: rgba($color: #000, $alpha: .75);
+    border-radius: 10px;
+    background-image: linear-gradient(#444444, #444444),
+                      linear-gradient(to right, #ffcdf3aa, #65d3ffaa);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+  .login-footer {
+    position: relative;
+    top: 85px;
   }
 }
 
@@ -1569,6 +1595,9 @@ form {
   position: relative;
   width: 100%;
   height: 1200px;
+  .join-frame {
+    border-radius: 10px;
+  }
 }
 
 
@@ -1592,7 +1621,7 @@ form {
     padding-right: 20px;
 
     .gnb li a {
-      padding: 26px 23px;
+      padding: 26px 20px;
     }
   }
 
@@ -1715,8 +1744,6 @@ form {
     background: linear-gradient(to top, rgb(181, 255, 254), 
                                         rgba(255, 245, 254, 0.95));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
     display: none;
 
     .util {
@@ -1931,11 +1958,21 @@ form {
 
     .place_list li {
       float: none;
-      width: 100%;
-      margin: 0;
+      width: 95%;
+      margin: 0 auto 20px;
       box-sizing: border-box;
-      padding: 0 20px;
+      padding: 20px 20px;
       top: 0;
+      &:first-child {
+        margin: 0 auto 20px;
+      }
+      a img {
+        border-radius: 10px;
+      }
+
+      &:hover {
+        transform: none;
+      }
 
       p.txt {
         padding: 10px 50px 30px;
