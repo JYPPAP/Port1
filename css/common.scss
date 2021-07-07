@@ -1036,9 +1036,9 @@ footer {
 
   .mainI {
     max-width: 1000px;
+    width: 95%;
     height: 400px;
     border-bottom: 1px solid #555;
-    // margin-top: 30px;
     overflow: hidden;
 
     >h2 {
@@ -1052,10 +1052,10 @@ footer {
     }
 
     .subM {
-
       .subI {
-
-        >a {
+        width: auto;
+        height: 100%;
+        a {
           display: block;
           width: 200px;
           height: 200px;
@@ -1075,6 +1075,11 @@ footer {
           margin-top: 5px;
           color: #777;
         }
+      }
+      /* 이상하게 얘만 문제라 그냥 빈거 하나 넣어버림. */
+      .subI12 a{
+        border: none;
+        box-shadow: none;
       }
     }
   }
@@ -1490,68 +1495,70 @@ footer {
 /*==========
     로그인
   ===========*/
-.login_area {
-
-}
 
 #login-wrap {
   display: grid;
   place-items: center;
   position: relative;
   width: 100%;
-  height: 500px;
+  .login-frame {
+    padding: 0 50px 100px;
+    margin-top: 150px;
+    background-color: #555;
+  }
 }
 
 form {
   padding: 10px;
-}
-
-.input-box {
-  position: relative;
-  margin: 10px 0;
-
-  >input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    padding: 20px 0 5px 0;
-    font-size: 14pt;
-    width: 100%;
-  }
-
-  input {
-    &::placeholder {
-      color: transparent;
-    }
-
-    &:placeholder-shown+label {
-      color: #aaa;
+  .input-box {
+    position: relative;
+    margin: 10px 0;
+  
+    >input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 0 5px 0;
       font-size: 14pt;
-      top: 15px;
+      width: 100%;
     }
-
-    &:focus,
-    &:not(:placeholder-shown) {
-      border-bottom: 1px solid #8aa1a1;
-      outline: none;
+  
+    input {
+      &::placeholder {
+        color: transparent;
+      }
+  
+      &:placeholder-shown+label {
+        color: #aaa;
+        font-size: 14pt;
+        top: 15px;
+      }
+  
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-bottom: 1px solid #8aa1a1;
+        outline: none;
+      }
+  
     }
-
-  }
-
-  input:focus+label,
-  label {
-    color: #8aa1a1;
-    font-size: 10pt;
-    pointer-events: none;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
+  
+    input:focus+label,
+    label {
+      color: #8aa1a1;
+      font-size: 10pt;
+      pointer-events: none;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+    }
   }
 }
+
+
 
 /*==========
   회원가입
@@ -1585,7 +1592,7 @@ form {
     padding-right: 20px;
 
     .gnb li a {
-      padding: 26px 25px;
+      padding: 26px 23px;
     }
   }
 
@@ -1601,11 +1608,6 @@ form {
   .appbbs_area .appbbs_box {
     box-sizing: border-box;
     padding: 0 10px;
-    .mainM {
-      .mainI {
-        // max-width: 90%;
-      }
-    }
   }
   footer .foot_area {
     box-sizing: border-box;
@@ -1626,13 +1628,16 @@ form {
   }
   body.dark {
     .header_cont {
-      border-radius: 15px;
       /* fallback for old browsers */
-      background: #7F7FD5;
+      background: -webkit-linear-gradient(to top, rgb(87, 47, 82),
+          rgba(75,75,75, 0.95));
       /* Chrome 10-25, Safari 5.1-6 */
-      background: -webkit-linear-gradient(to right, #7F7FD5, #86A8E7, #b38484);
+      background: linear-gradient(to top, rgb(87, 47, 82),
+          rgba(75,75,75, 0.95));
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background: linear-gradient(to right, #6060e2, #5c8be4, #65e4db);
+    }
+    header .header_area span {
+      background: #ddd;
     }
   }
   header {
@@ -1702,12 +1707,16 @@ form {
     top: -45px;
     border-radius: 15px;
     position: relative;
+    background: rgb(181, 255, 254);
     /* fallback for old browsers */
-    background: #7F7FD5;
+    background: -webkit-linear-gradient(to top, rgb(181, 255, 254), 
+                                                rgba(255, 245, 254, 0.95));
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
+    background: linear-gradient(to top, rgb(181, 255, 254), 
+                                        rgba(255, 245, 254, 0.95));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
+    
+
     display: none;
 
     .util {
@@ -1942,11 +1951,6 @@ form {
 
   .appbbs_area {
     padding: 0 20px;
-    .mainM {
-      .mainI {
-        // max-width: 90%;
-      }
-    }
   }
 
   /* popup_base */

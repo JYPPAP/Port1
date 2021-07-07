@@ -46,41 +46,16 @@ $(document).ready(function () {
 /* 슬라이드 아이템 */
 $(document).ready(function () {
   var mySwiper = new Swiper(".mainM .swiper-container", {
+    slidesPerView: "auto",
     observer: true,
     observerParents: true,
     loop: false,
     loopFillGroupWidthBlank: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      1000: {
-        slidesPerView: 4.2,
-        slidesPerGroup: 4,
-        spaceBetween: 15,
-      },
-      799: {
-        slidesPerView: 3.3,
-        slidesPerGroup: 3,
-        spaceBetween: 5,
-      },
-      500: {
-        slidesPerView: 2.5,
-        slidesPerGroup: 2,
-        spaceBetween: 5,
-      },
-      
-    }
   });
 });
 
 $(function() {
-  /* 팝업 관련 설정. */
+/* 팝업 관련 설정. */
   $('.popup_base .btn_xpop >a').click(function () {
     $(this).parents('.popup_base').hide();
     $(this).parents('.pop_content').find('.player')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
