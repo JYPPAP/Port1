@@ -37,33 +37,57 @@
               </div>
           </div>
           <li><a href="login.html">LOGIN</a></li>
-          <li><a href="join.html">JOIN</a></li>
+          <li><a href="login.html">JOIN</a></li>
         </ul>
       </div>
   </header>
   <!-- End-header -->
   
 
-  <div id="login-wrap">
-    <form action="" method="POST">
-
-      <div class="login-body">
-        <form action="index.html" class="box" method="post">
-          <h1>Login</h1>
-          <input type="text" name="" placeholder="Username">
-          <input type="password" name="" placeholder="Password">
-          <input type="submit" name="" value="Login">
+  <div class="login-wrap">
+    <div class="form-wrap">
+      <div class="button-wrap">
+          <div id="btn"></div>
+          <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
+          <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+      </div>
+      <div class="social-icons">
+          <img src="images/ico/fb.png" alt="facebook">
+          <img src="images/ico/tw.png" alt="twitter">
+          <img src="images/ico/gl.png" alt="google">
+      </div>
+      <form id="login" action="" class="input-group">
+          <input type="text" class="input-field" placeholder="User name or Email" required>
+          <input type="password" class="input-field" placeholder="Enter Password" required>
+          <input type="checkbox" class="checkbox"><span>Remember Password</span>
+          <button class="submit">Login</button>
       </form>
-      </div>
-      
-      <div class="login-footer">
-        <button id='forgot' class="btn btn-pwd">비밀번호 찾기</button>
-        <button class="btn btn-join">회원가입</button>
-        <input type="submit" value="로그인" class="btn btn-login">
-      </div>
-    </form>
+      <form id="register" action="" class="input-group">
+          <input type="text" class="input-field" placeholder="User name or Email" required>
+          <input type="email" class="input-field" placeholder="Your Email" required>
+          <input type="password" class="input-field" placeholder="Enter Password" required>
+          <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+          <button class="submit">REGISTER</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    var moveLogin = document.getElementById("login");
+    var moveReg = document.getElementById("register");
+    var formBtn = document.getElementById("btn");
 
-  </div><!-- End-#container -->
+    function login() {
+      moveLogin.style.left = "50px";
+      moveReg.style.left = "450px";
+      formBtn.style.left = "0";
+    }
+
+    function register() {
+      moveLogin.style.left = "-400px";
+      moveReg.style.left = "50px";
+      formBtn.style.left = "110px";
+    }
+  </script>
 
   <footer>
     <div class="foot_area box_inner">
