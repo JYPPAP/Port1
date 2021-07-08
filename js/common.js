@@ -1,15 +1,5 @@
 $(document).ready(function () {
-  /* 로딩이 완료되면 함수 실행. */
   $("a.s_point").smoothScroll();
-
-  // 모바일 메뉴 띄움
-  /* 위쪽에서 800 아래로 내려 갈 때 메뉴를 어떻게 할 것인지 설정했다.
-  그래서 모바일 화면에서는 원래의 gnb가 openMOgnb로 대체되고 클릭했을 때 header에 on클래스를 주고
-  빠르게 슬라이드 다운(위에서 내려오는)에 이상하게 동작하지 말라고 body 태그에 버블을 방지용 preventDefault를 추가해 줬다.
-  이거 안 넣어주면 예를 들어 모달이나 라이트박스 같은게 같이 실행될 수 있기 때문이다. 지금 TOP3 메뉴가 누르면 창이 뜨게 해놨는데
-  그게 클릭 될 수 있음.
-   */
-  
   $(".openMOgnb").click(function () {
     $("header").addClass("on");
     $("header .header_cont").slideDown("fast");
