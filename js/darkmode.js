@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 /* dark mode */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 값이 없으면 theme, light로 key, value 지정 */
   if(!theme) {
     // localStorage.setItem('theme', 'light');
-    const { matches} = window.matchMedia('(prefers-color-scheme: dark)');
+    const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
     // console.log(matches);
     theme = matches ? 'dark' : 'light';
 

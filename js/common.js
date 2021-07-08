@@ -30,7 +30,11 @@ $(document).ready(function () {
     /* 리사이즈 이벤트를 넣어서 화면의 크기가 변경되면 (header의 너비가 800 이상일 때) header_cont를 보이게 설정. */
     if (parseInt($("header").css("width")) > 800) $(".header_cont").show();
   });
-
+  
+  /* Menu alert */
+  var $altMenu1 = $('#header .header_cont .gnb li:nth-child(3) a');
+  // var altMenu2 = $('#header .header_cont .gnb li').nthChild(4);
+  
   /* 슬라이더 작동을 위한 JS */
   $(document).ready(function () {
     var swiper = new Swiper(".main_rolling_mobile .swiper-container", {
@@ -46,41 +50,16 @@ $(document).ready(function () {
 /* 슬라이드 아이템 */
 $(document).ready(function () {
   var mySwiper = new Swiper(".mainM .swiper-container", {
+    slidesPerView: "auto",
     observer: true,
     observerParents: true,
     loop: false,
     loopFillGroupWidthBlank: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      1000: {
-        slidesPerView: 4.2,
-        slidesPerGroup: 4,
-        spaceBetween: 15,
-      },
-      799: {
-        slidesPerView: 3.3,
-        slidesPerGroup: 3,
-        spaceBetween: 5,
-      },
-      500: {
-        slidesPerView: 2.5,
-        slidesPerGroup: 2,
-        spaceBetween: 5,
-      },
-      
-    }
   });
 });
 
 $(function() {
-  /* 팝업 관련 설정. */
+/* 팝업 관련 설정. */
   $('.popup_base .btn_xpop >a').click(function () {
     $(this).parents('.popup_base').hide();
     $(this).parents('.pop_content').find('.player')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
