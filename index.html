@@ -8,6 +8,8 @@
   <title>Free Music Library</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="images/logo/favicon.ico" type="image/x-icon">
+  <!-- Assets -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- font-awesome 5.8.2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <!-- jQuery -->
@@ -67,8 +69,7 @@
                   <i class="far fa-moon fa-lg"></i></div>
               </div>
             </div>
-            <li><a href="login.html">LOGIN</a></li>
-            <li><a href="login.html">JOIN</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;SIGN IN</a></li>
           </ul>
           <nav>
             <ul class="gnb clear">
@@ -174,14 +175,18 @@
       </div>
       <!-- End-main_rolling_mobile -->
 
-      <div class="about_area">
+      <div class="about_area" >
         <h2>Charts <b>TOP 3</b></h2>
         <div class="about_box">
-          <ul class="place_list box_inner clear">
-            <li>
+          <div class="place_list box_inner clear" 
+              data-aos="fade-up"
+              data-aos-duration="1000">
+            <div class="placeItem placeItem1"
+            data-aos="fade-right"
+            data-aos-duration="1500">
               <a href="#" onclick="$('.popup_base').css('height', $(document).height());$('.contact_pop').show();">
                 <!-- <a href="javascript:;"> -->
-                <img src="./images/mainbg/pixel_pig.png" alt="">
+                <div class="topImgFrame"><img src="./images/mainbg/pixel_pig.png" alt=""></div>
                 <h3>Di Young - Pixel Pig</h3>
                 <p class="txt">
                   라이선스<br>
@@ -191,11 +196,13 @@
                 </p>
                 <span class="view">MORE</span>
               </a>
-            </li>
+            </div>
 
-            <li>
+            <div class="placeItem placeItem2"
+            data-aos="fade-up"
+            data-aos-duration="1500">
               <a href="#" onclick="$('.popup_base').css('height', $(document).height());$('.space_pop').show();">
-                <img src="./images/mainbg/WeAreOne.png" alt="">
+                <div class="topImgFrame"><img src="./images/mainbg/WeAreOne.png" alt=""></div>
                 <h3>We Are One – Vexento</h3>
                 <p class="txt">
                   라이선스<br>
@@ -205,11 +212,13 @@
                 </p>
                 <span class="view">MORE</span>
               </a>
-            </li>
+            </div>
 
-            <li>
+            <div class="placeItem placeItem3"
+            data-aos="fade-left"
+            data-aos-duration="1500">
               <a href="#" onclick="$('.popup_base').css('height', $(document).height());$('.program_pop').show();">
-                <img src="./images/mainbg/High.png" alt="">
+                <div class="topImgFrame"><img src="./images/mainbg/High.png" alt=""></div>
                 <h3>High [NCS Release] – JPB</h3>
                 <p class="txt">
                   라이선스<br>
@@ -219,8 +228,8 @@
                 </p>
                 <span class="view">MORE</span>
               </a>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
       <!-- End-about_area -->
@@ -228,7 +237,10 @@
       <div class="appbbs_area">
         <div class="appbbs_box box_inner clear">
           <div class="mainM">
-            <div class="mainI mainI1 swiper-container">
+            <div class="mainI mainI1 swiper-container" 
+            data-aos="fade-down-left"
+            data-aos-duration="1500"
+            >
               <h2>Charts: Top 50</h2>
               <p>The most played tracks on Free Music Library this week</p>
               <div class="subM swiper-wrapper clear">
@@ -270,7 +282,10 @@
               </div>
             </div>
 
-            <div class="mainI mainI2 swiper-container">
+            <div class="mainI mainI2 swiper-container" 
+            data-aos="fade-down-right"
+            data-aos-duration="1500"
+            >
               <h2>Study</h2>
               <p>Popular playlists from the Free Music Library</p>
               <div class="subM swiper-wrapper clear">
@@ -312,7 +327,10 @@
               </div>
             </div>
 
-            <div class="mainI mainI3 swiper-container">
+            <div class="mainI mainI3 swiper-container" 
+            data-aos="fade-up-left"
+            data-aos-duration="1500"
+            >
               <h2>Charts: New & hot</h2>
               <p>Up-and-coming tracks on Free Music Library</p>
               <div class="subM swiper-wrapper clear">
@@ -354,7 +372,10 @@
               </div>
             </div>
 
-            <div class="mainI mainI4 swiper-container">
+            <div class="mainI mainI4 swiper-container" 
+            data-aos="fade-up-right"
+            data-aos-duration="1500"
+            >
               <h2>Chill</h2>
               <p>Popular playlists from the Free Music Library</p>
               <div class="subM swiper-wrapper clear">
@@ -396,7 +417,10 @@
               </div>
             </div>
 
-            <div class="mainI mainI5 swiper-container">
+            <div class="mainI mainI5 swiper-container" 
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            >
               <h2>Party</h2>
               <p>Popular playlists from the Free Music Library</p>
               <div class="subM swiper-wrapper clear">
@@ -572,5 +596,9 @@
   </div>
   <!-- End-program_pop -->
 </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </html>

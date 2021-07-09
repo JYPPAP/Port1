@@ -132,9 +132,10 @@ body.dark {
   .toggle-button {
     >.toggle-button-switch {
       left: 26px;
+      background-color: #ddd;
     }
     >.toggle-button-text {
-      background-color: #025a34;
+      background-color: #444;
     }
   }
   /* 헤더 */
@@ -167,6 +168,9 @@ body.dark {
             &:hover {
               color: #eee;
             }
+            &::after {
+              background: rgba(254,121,104, 0.8);
+            }
           }
         }
       }
@@ -192,10 +196,8 @@ body.dark {
       background-color: #333;
     }
     .place_list {
-      li {
-        box-shadow: 5px 5px 30px #222,
-                    1px 1px 10px #aaa inset;
-        background-color: #555;
+      .placeItem {
+        background: rgba(23, 23, 23, 0.25);
         h3 {
           color: #eee;
         }
@@ -266,9 +268,19 @@ body.dark {
   .popup_base {
     background: rgba(0, 0, 0, 0.4);
     .pop_content {
-      background-color: #232323;
+      background: rgba( 0, 0, 0, 0.7 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 8.0px );
+      -webkit-backdrop-filter: blur( 8.0px );
+      border-radius: 20px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+
       .pop_list li {
         color: #ddd;
+        
+        .pop_txt p {
+          color: #eee;
+        }
       }
     }
   }
@@ -374,13 +386,13 @@ header {
       left: 1px;
       width: 23px;
       height: 23px;
-      background-color: #fff;
+      background-color: #ddd;
       border-radius: 100%;
       transition: left 0.3s;
     }
     >.toggle-button-text {
       display: flex;
-      background-color: #3dbf87;
+      background-color: #444;
       border-radius: 12px;
       box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .75);
       transition: background-color .3s;
@@ -390,7 +402,7 @@ header {
         width: 50%;
         line-height: 25px;
         text-align: center;
-        color: #fff;
+        color: #f4d75e;
       }
     }
   }
@@ -403,27 +415,14 @@ header {
     li {
       display: inline;
 
-      &::after {
-        content: "|";
-        display: inline-block;
-        padding: 0 10px;
-        font-size: 10px;
-        color: #eee;
-        position: relative;
-        top: -2px;
-      }
-
-      &:last-child::after {
-        content: "";
-        display: none;
-      }
-
       a {
         font-size: 14px;
         color: #555;
         &:hover {
           color: #000;
-          text-decoration: underline;
+        }
+        i {
+          font-size: 1.2rem;
         }
       }
     }
@@ -433,28 +432,49 @@ header {
     float: right;
     box-sizing: border-box;
     padding-top: 5px;
-
-    /* height: 113px; */
+    
     li {
       float: left;
 
       a {
         display: block;
-        padding: 26px 40px;
+        padding: 25px 40px;
+        margin-left: 0px;
         font-size: 18px;
         color: #333;
+        position: relative;
+        transition: all .2s;
+        overflow: hidden;
+
         &:hover {
           color: #000;
-          text-decoration: underline;
         }
+        &::after {
+          border-radius: 10px;
+          content: "";
+          position: absolute;
+          top: 80%;
+          left: -100%;
+          width: 80%;
+          height: 4px;
+          background: rgba(168, 70, 248, 0.8);
+          transition: all .3s;
+          
+        }
+        &:hover::after {
+          left: 10%;
+        }
+
+
+
         i {
           display: none;
         }
       }
 
-      &:last-child a {
-        padding-right: 0;
-      }
+      // &:last-child a {
+      //   padding-right: 0;
+      // }
     }
   }
 
@@ -671,26 +691,37 @@ footer {
   }
 
   .place_list {
-    li {
+    .placeItem {
       float: left;
-      width: 32%;
-      margin-left: 2%;
+      width: 31%;
+      margin-left: 2.3%;
       text-align: center;
       position: relative;
       top: -50px;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 5px 5px 20px #000,
-                  1px 1px 10px #fff inset;
-      background-color: #d3dcc8;
-      transition: all .4s;
-      &:hover {
-        transform: scale(1.1, 1.1);
-        box-shadow: 5px 5px 50px #fff
-      }
-      img {
-        width: 100%;
-        height: 320px;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(6.0px);
+      -webkit-backdrop-filter: blur(6.0px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+      .topImgFrame {
+        overflow: hidden;
+        border-radius: 10px;
+        width: 95%;
+        margin: 10px auto;
+
+        &:hover img{
+          transform: scale(1.15, 1.15);
+          box-shadow: 5px 5px 50px #fff
+        }
+        img {
+          transition: all .4s;
+          width: 100%;
+          height: 320px;
+        }
       }
 
       &:first-child {
@@ -863,12 +894,17 @@ footer {
     width: 580px;
     margin: 200px auto 0;
     box-sizing: border-box;
-    background: #ccc;
+    background: rgba( 255, 255, 255, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 
     .btn_xpop {
       position: absolute;
-      right: 5px;
-      top: 5px;
+      right: 15px;
+      top: 15px;
 
       a {
         display: block;
@@ -894,6 +930,11 @@ footer {
         background: #fff;
       }
 
+      iframe {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
       h2.tit_pop {
         padding: 10px 0 24px;
         font-weight: bold;
@@ -917,6 +958,7 @@ footer {
           overflow: hidden;
           word-break: keep-all;
           letter-spacing: -2px;
+          color: #111;
         }
       }
     }
@@ -1419,7 +1461,7 @@ body.dark .login-wrap {
     padding-right: 20px;
 
     .gnb li a {
-      padding: 26px 20px;
+      padding: 25px 17px;
     }
   }
 
@@ -1626,6 +1668,7 @@ body.dark .login-wrap {
           font-size: 16px;
           color: #333;
           font-family: 'Josefin Sans', sans-serif;
+          overflow: hidden;
           i {
             display: inline-block;
             font-size: 2em;
@@ -1754,7 +1797,7 @@ body.dark .login-wrap {
       background: #fff;
     }
 
-    .place_list li {
+    .place_list .placeItem {
       float: none;
       width: 95%;
       margin: 0 auto 20px;
