@@ -97,6 +97,7 @@ body {
   color: #444;
   white-space: normal;
   word-wrap: break-word;
+  overflow-x: hidden;
 }
 
 * {
@@ -132,10 +133,16 @@ body.dark {
   .toggle-button {
     >.toggle-button-switch {
       left: 26px;
-      background-color: #ddd;
+      background-color: #444;
     }
     >.toggle-button-text {
-      background-color: #444;
+      background-color: #ddd;
+
+      >.toggle-button-text-on,
+      >.toggle-button-text-off {
+        color: #f45e5e;
+        transition-delay: .4s;
+      }
     }
   }
   /* 헤더 */
@@ -413,7 +420,10 @@ header {
     position: relative;
 
     li {
-      display: inline;
+      display: inline-block;
+      position: relative;
+      margin-top: -2px;
+      right: 8%;
 
       a {
         font-size: 14px;
@@ -422,7 +432,7 @@ header {
           color: #000;
         }
         i {
-          font-size: 1.2rem;
+          font-size: 1.6rem;
         }
       }
     }
@@ -752,10 +762,14 @@ footer {
       .view {
         display: inline-block;
         margin-top: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         padding-top: 5px;
         border-top: 2px solid #333;
         color: #666;
+        transition: all .3s;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -1204,6 +1218,7 @@ footer {
     align-content: space-between;
     align-items: center;
     .con{
+      position: relative;
       width: 180px;
       margin-bottom: 30px;
       margin: 5px;
@@ -1215,6 +1230,11 @@ footer {
                         linear-gradient(to right, #c6ffdd, #fbd786, #fac8cb);
       background-origin: border-box;
       background-clip: content-box, border-box;
+
+      &:hover .con-hover{
+        display: block;
+        transition: all .3s;
+      }
       
       >a {
         width: auto;
@@ -1242,6 +1262,32 @@ footer {
         display: block;
         height: 20px;
         font-family: 'Jost', sans-serif;
+      }
+      .con-hover {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 71.6%;
+        background-color: rgba($color: #000000, $alpha: .5);
+
+        .fas {
+          position: relative;
+          color: #ddd;
+          cursor: pointer;
+        }
+        .fa-play-circle {
+          font-size: 6rem;
+          display: grid;
+          place-items: center;
+          top: 20%;
+        }
+        .fa-ellipsis-h {
+          font-size: 2rem;
+          top: 28%;
+          left: 75%;
+        }
       }
     }
     .con01 >a { background-image: url(../images/bg/bg-01.jpg);}
@@ -1594,7 +1640,8 @@ body.dark .login-wrap {
       }
 
       li {
-        float: left;
+        position: relative;
+        left: -95%;
 
         &::after {
           content: "|";
