@@ -316,6 +316,9 @@ body.dark {
       }
     }
   }
+  .service-wrap, .privacy-wrap {
+    color: #ddd;
+  }
 }   /* end-darkMode */
 
 
@@ -1486,6 +1489,14 @@ body.dark .login-wrap {
   }
 }
 
+/* 이용 약관 */
+/* 개인정보 취급 방침 */
+
+.service-wrap, .privacy-wrap {
+  margin-top: 200px;
+  padding: 20px;
+  line-height: 1.4;
+}
 
 /****************************************************************
         태블릿 스타일
